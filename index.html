@@ -4,8 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Primis — 3D Spatial Intelligence</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<meta name="description" content="3D Spatial Intelligence for construction, infrastructure, and logistics. From drones, LiDAR and cameras to operational decisions — built in Germany.">
+<meta property="og:title" content="Primis — 3D Spatial Intelligence">
+<meta property="og:description" content="From drones, LiDAR and cameras to operational decisions — for construction, infrastructure, and logistics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://primisintelligence.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Primis — 3D Spatial Intelligence">
+<meta name="twitter:description" content="From drones, LiDAR and cameras to operational decisions — for construction, infrastructure, and logistics.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080808'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-size='22' font-weight='900' fill='white'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css2?family=DM+Sans:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Primis UG",
+  "alternateName": "Primis",
+  "url": "https://primisintelligence.com",
+  "email": "praznik@primisintelligence.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rödermark",
+    "addressRegion": "Hessen",
+    "addressCountry": "DE"
+  },
+  "founder": { "@type": "Person", "name": "Vladislav Praznik" },
+  "foundingDate": "2026-04",
+  "description": "3D Spatial Intelligence for construction, infrastructure, and logistics."
+}
+</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -34,7 +62,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .nav-cta:hover { opacity: 0.8; }
 
 /* HERO */
-.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 60px 180px; position: relative; overflow: hidden; }
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 60px; position: relative; overflow: hidden; }
 .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 40px; display: flex; align-items: center; gap: 16px; animation: fadeUp 0.6s ease both; }
 .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gray-400); }
 .hero-headline { font-family: var(--font-display); font-size: clamp(52px, 7.5vw, 100px); font-weight: 800; line-height: 1.0; letter-spacing: -0.02em; color: var(--black); max-width: 860px; margin-bottom: 40px; animation: fadeUp 0.6s 0.1s ease both; }
@@ -48,42 +76,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .btn-secondary { font-size: 14px; font-weight: 400; color: var(--gray-600); text-decoration: none; border-bottom: 1px solid var(--gray-200); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
 .btn-secondary:hover { color: var(--black); border-color: var(--black); }
 .hero-grid-bg { position: absolute; top: 0; right: 0; width: 55%; height: 100%; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(to left, rgba(0,0,0,0.12), transparent); pointer-events: none; }
-.hero-stat-bar { position: absolute; bottom: 60px; left: 60px; right: 60px; display: flex; gap: 64px; border-top: 1px solid var(--line); padding-top: 40px; animation: fadeUp 0.6s 0.4s ease both; }
-.hero-stat-num { font-family: var(--font-display); font-size: 30px; font-weight: 700; color: var(--black); letter-spacing: -0.02em; display: block; margin-bottom: 6px; }
-.hero-stat-label { font-size: 11px; color: var(--gray-400); letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* SECTIONS */
 section { padding: 120px 60px; }
 .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 24px; display: flex; align-items: center; gap: 14px; }
 .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gray-200); }
 .section-title { font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 60px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); }
-
-/* PROBLEM */
-.problem { background: var(--off-white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.problem-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; margin-top: 72px; }
-.problem-statement { font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
-.problem-statement em { font-style: normal; color: var(--gray-400); }
-.problem-item { padding: 32px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 28px 1fr; gap: 20px; }
-.problem-item:first-child { border-top: 1px solid var(--line); }
-.problem-num { font-size: 11px; font-weight: 500; color: var(--gray-400); padding-top: 3px; letter-spacing: 0.06em; }
-.problem-item-title { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
-.problem-item-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; font-weight: 300; }
-
-/* SOLUTION */
-.solution-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 60px; }
-.solution-desc { font-size: 16px; color: var(--gray-600); max-width: 380px; line-height: 1.7; font-weight: 300; flex-shrink: 0; }
-.pipeline { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--line); margin-bottom: 2px; }
-.pipeline-step { padding: 36px 24px; border-right: 1px solid var(--line); transition: background 0.2s; cursor: default; }
-.pipeline-step:last-child { border-right: none; }
-.pipeline-step:hover { background: var(--gray-50); }
-.pipeline-step-num { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; margin-bottom: 18px; }
-.pipeline-step-name { font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); margin-bottom: 12px; line-height: 1.3; }
-.pipeline-step-desc { font-size: 11.5px; color: var(--gray-400); line-height: 1.6; font-weight: 300; }
-.solution-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray-100); border: 1px solid var(--line); margin-top: 2px; }
-.solution-card { background: var(--white); padding: 40px 32px; }
-.solution-card-icon { width: 32px; height: 32px; border: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
-.solution-card-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
-.solution-card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; font-weight: 300; }
 
 /* INDUSTRIES */
 .industries { background: var(--off-white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -98,69 +96,79 @@ section { padding: 120px 60px; }
 .industry-list li { font-size: 13.5px; color: var(--gray-600); padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; gap: 12px; line-height: 1.5; font-weight: 400; }
 .industry-list li::before { content: '—'; color: var(--gray-400); }
 
-/* VS */
-.vs { background: var(--black); color: var(--white); }
-.vs .section-label { color: rgba(255,255,255,0.3); }
-.vs .section-label::before { background: rgba(255,255,255,0.15); }
-.vs .section-title { color: var(--white); margin-bottom: 72px; }
-.vs-table { border: 1px solid rgba(255,255,255,0.08); }
-.vs-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1.3fr; border-bottom: 1px solid rgba(255,255,255,0.06); }
-.vs-row:last-child { border-bottom: none; }
-.vs-row.header { background: rgba(255,255,255,0.03); }
-.vs-cell { padding: 22px 28px; font-size: 13px; border-right: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; }
-.vs-cell:last-child { border-right: none; }
-.vs-row.header .vs-cell { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); padding: 18px 28px; }
-.vs-row.header .vs-cell:last-child { color: rgba(255,255,255,0.75); }
-.vs-row:not(.header) .vs-cell:first-child { color: rgba(255,255,255,0.6); font-weight: 400; }
-.vs-row:not(.header) .vs-cell:not(:first-child) { color: rgba(255,255,255,0.3); font-weight: 300; }
-.vs-row:not(.header) .vs-cell:last-child { color: #6ee7b7; font-weight: 500; }
-.vs-row:hover:not(.header) { background: rgba(255,255,255,0.02); }
+/* PLATFORM */
+.platform-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 60px; }
+.platform-desc { font-size: 16px; color: var(--gray-600); max-width: 380px; line-height: 1.7; font-weight: 300; flex-shrink: 0; }
+.pipeline { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--line); margin-bottom: 2px; }
+.pipeline-step { padding: 36px 24px; border-right: 1px solid var(--line); transition: background 0.2s; cursor: default; }
+.pipeline-step:last-child { border-right: none; }
+.pipeline-step:hover { background: var(--gray-50); }
+.pipeline-step-num { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; margin-bottom: 18px; }
+.pipeline-step-name { font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); margin-bottom: 12px; line-height: 1.3; }
+.pipeline-step-desc { font-size: 11.5px; color: var(--gray-400); line-height: 1.6; font-weight: 300; }
+.capabilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray-100); border: 1px solid var(--line); margin-top: 2px; }
+.capability-card { background: var(--white); padding: 40px 32px; }
+.capability-icon { width: 32px; height: 32px; border: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+.capability-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+.capability-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; font-weight: 300; }
 
-/* TEAM */
-.team { background: var(--off-white); border-top: 1px solid var(--line); }
-.team-layout { display: grid; grid-template-columns: 380px 1fr; gap: 100px; align-items: start; margin-top: 72px; }
-.team-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: grayscale(100%); display: block; }
-.team-name { font-family: var(--font-display); font-size: clamp(36px, 4vw, 54px); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; line-height: 1.05; }
-.team-title { font-size: 13px; color: var(--gray-400); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 48px; }
-.team-fact { padding: 24px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 140px 1fr; gap: 24px; }
-.team-fact:first-of-type { border-top: 1px solid var(--line); }
-.team-fact-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); padding-top: 2px; }
-.team-fact-value { font-size: 14px; color: var(--black); font-weight: 400; line-height: 1.55; }
-.team-cta { margin-top: 40px; }
+/* PILOT */
+.pilot { background: var(--black); color: var(--white); }
+.pilot .section-label { color: rgba(255,255,255,0.3); }
+.pilot .section-label::before { background: rgba(255,255,255,0.15); }
+.pilot .section-title { color: var(--white); }
+.pilot-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 60px; }
+.pilot-desc { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 460px; line-height: 1.7; font-weight: 300; flex-shrink: 0; }
+.pilot-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid rgba(255,255,255,0.08); }
+.pilot-card { padding: 40px 32px; border-right: 1px solid rgba(255,255,255,0.06); }
+.pilot-card:last-child { border-right: none; }
+.pilot-num { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 28px; }
+.pilot-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.25; }
+.pilot-text { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 300; }
 
 /* CONTACT */
 .contact { text-align: center; padding: 160px 60px; }
 .contact-headline { font-family: var(--font-display); font-size: clamp(56px, 8vw, 108px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.0; margin-bottom: 28px; }
-.contact-sub { font-size: 17px; color: var(--gray-600); font-weight: 300; margin-bottom: 56px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.contact-sub { font-size: 17px; color: var(--gray-600); font-weight: 300; margin-bottom: 56px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.7; }
 .contact-email { display: inline-block; font-family: var(--font-display); font-size: clamp(18px, 2.5vw, 28px); font-weight: 600; color: var(--black); text-decoration: none; border-bottom: 2px solid var(--black); padding-bottom: 4px; transition: opacity 0.2s; letter-spacing: -0.01em; }
 .contact-email:hover { opacity: 0.45; }
 
 /* FOOTER */
-footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
-.footer-logo { font-family: var(--font-display); font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
-.footer-info { font-size: 12px; color: var(--gray-400); }
+footer { padding: 80px 60px 36px; border-top: 1px solid var(--line); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 48px; border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+.footer-brand { display: flex; flex-direction: column; gap: 16px; }
+.footer-logo { font-family: var(--font-display); font-size: 18px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; }
+.footer-tagline { font-size: 13px; color: var(--gray-600); line-height: 1.6; max-width: 280px; font-weight: 300; }
+.footer-heading { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col a { font-size: 13px; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+.footer-col a:hover { color: var(--black); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.footer-info, .footer-copyright { font-size: 12px; color: var(--gray-400); }
 
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 1024px) {
   nav, section, .hero, footer { padding-left: 32px; padding-right: 32px; }
-  .problem-layout { grid-template-columns: 1fr; gap: 48px; }
   .pipeline { grid-template-columns: repeat(3, 1fr); }
   .pipeline-step:nth-child(3) { border-right: none; }
-  .solution-grid { grid-template-columns: repeat(2, 1fr); }
+  .capabilities-grid { grid-template-columns: repeat(2, 1fr); }
   .industries-grid { grid-template-columns: 1fr; }
-  .team-layout { grid-template-columns: 1fr; }
-  .team-photo { max-width: 300px; }
-  .solution-header, .industries-header { flex-direction: column; align-items: flex-start; }
-  .hero-stat-bar { gap: 32px; flex-wrap: wrap; }
+  .pilot-grid { grid-template-columns: repeat(2, 1fr); }
+  .pilot-card:nth-child(2) { border-right: none; }
+  .industries-header, .platform-header, .pilot-header { flex-direction: column; align-items: flex-start; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media (max-width: 768px) {
   .nav-links li:not(:last-child) { display: none; }
   .pipeline { grid-template-columns: repeat(2, 1fr); }
-  .solution-grid { grid-template-columns: 1fr; }
-  .vs-row { grid-template-columns: 1.5fr 1fr 1.3fr; }
-  .vs-row .vs-cell:nth-child(3), .vs-row.header .vs-cell:nth-child(3) { display: none; }
+  .capabilities-grid { grid-template-columns: 1fr; }
+  .pilot-grid { grid-template-columns: 1fr; }
+  .pilot-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .pilot-card:last-child { border-bottom: none; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 </style>
 </head>
@@ -169,10 +177,9 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
 <nav>
   <a href="#" class="nav-logo">Primis</a>
   <ul class="nav-links">
-    <li><a href="#problem">Problem</a></li>
-    <li><a href="#solution">Solution</a></li>
     <li><a href="#industries">Industries</a></li>
-    <li><a href="#team">Team</a></li>
+    <li><a href="#platform">How it works</a></li>
+    <li><a href="#pilot">Pilot</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
@@ -183,51 +190,11 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
   <h1 class="hero-headline">3D Spatial<br>Intelligence<br><span>for Industry.</span></h1>
   <p class="hero-sub">From drones, LiDAR and cameras to operational decisions — for construction, infrastructure, and logistics.</p>
   <div class="hero-actions">
-    <a href="#contact" class="btn-primary">
-      Get in Touch
+    <a href="#pilot" class="btn-primary">
+      Request pilot access
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <a href="#solution" class="btn-secondary">See how it works</a>
-  </div>
-  <div class="hero-stat-bar">
-    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Industries Served</span></div>
-    <div class="hero-stat"><span class="hero-stat-num">6</span><span class="hero-stat-label">Pipeline Stages</span></div>
-    <div class="hero-stat"><span class="hero-stat-num">0</span><span class="hero-stat-label">Cloud Dependency</span></div>
-    <div class="hero-stat"><span class="hero-stat-num">Any</span><span class="hero-stat-label">Sensor Input</span></div>
-  </div>
-</section>
-
-<section class="problem" id="problem">
-  <p class="section-label">The Problem</p>
-  <div class="problem-layout">
-    <h2 class="section-title problem-statement">You collect the data.<br><em>Nobody reads it.</em></h2>
-    <div>
-      <div class="problem-item"><span class="problem-num">01</span><div><p class="problem-item-title">Drone scans pile up unused</p><p class="problem-item-desc">Site flights, LiDAR runs, photogrammetry — gigabytes of data with no automated way to extract numbers, deviations, or progress.</p></div></div>
-      <div class="problem-item"><span class="problem-num">02</span><div><p class="problem-item-title">Manual measurement costs days</p><p class="problem-item-desc">Volume calculations, defect surveys, container counts — done by hand, with delays, errors, and inconsistent results across teams.</p></div></div>
-      <div class="problem-item"><span class="problem-num">03</span><div><p class="problem-item-title">Cloud-only tools are a non-starter</p><p class="problem-item-desc">Remote sites, sensitive project data, slow uploads. Existing platforms assume permanent connectivity and offsite processing.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="solution">
-  <p class="section-label">The Solution</p>
-  <div class="solution-header">
-    <h2 class="section-title">From raw data<br>to verified decision.</h2>
-    <p class="solution-desc">Primis ingests any sensor input, reconstructs the scene in 3D, segments it, computes the metrics you need, and returns an audit-ready output.</p>
-  </div>
-  <div class="pipeline">
-    <div class="pipeline-step"><p class="pipeline-step-num">01</p><p class="pipeline-step-name">Input</p><p class="pipeline-step-desc">LiDAR · Camera · Drone · Satellite · Any sensor</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">02</p><p class="pipeline-step-name">3D Reconstruction</p><p class="pipeline-step-desc">Gaussian Splatting · Point Cloud · Real-time</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">03</p><p class="pipeline-step-name">Segmentation</p><p class="pipeline-step-desc">Objects · Semantics · Tracking · Multi-modal</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">04</p><p class="pipeline-step-name">AI Analysis</p><p class="pipeline-step-desc">Scene Understanding · Change Detection</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">05</p><p class="pipeline-step-name">Quantification</p><p class="pipeline-step-desc">Volumes · Counts · Deltas · Geometries</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">06</p><p class="pipeline-step-name">Decision</p><p class="pipeline-step-desc">Verified · Explainable · Audit-Ready</p></div>
-  </div>
-  <div class="solution-grid">
-    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="0.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="0.5" y="8.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="8.5" width="5" height="5" stroke="#999"/></svg></div><p class="solution-card-title">Any Sensor Input</p><p class="solution-card-desc">LiDAR, RGB camera, drone footage, satellite imagery — Primis processes any format without reconfiguration.</p></div>
-    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#999"/><path d="M7 3.5V7L9.5 8.5" stroke="#999" stroke-linecap="round"/></svg></div><p class="solution-card-title">On-Premise &amp; Offline</p><p class="solution-card-desc">Runs on edge hardware. No cloud upload required — works on isolated sites and with sensitive project data.</p></div>
-    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 11V8M5 11V5M9 11V3M13 11V7" stroke="#999" stroke-linecap="round"/></svg></div><p class="solution-card-title">Quantified Insights</p><p class="solution-card-desc">Volumes, counts, deltas, BIM deviations — computed automatically from every flight and every dataset.</p></div>
-    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="solution-card-title">Audit-Ready Output</p><p class="solution-card-desc">Every result with 3D proof, confidence score, and full traceability. No black boxes, no guesswork.</p></div>
+    <a href="#platform" class="btn-secondary">See how it works</a>
   </div>
 </section>
 
@@ -274,52 +241,97 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
   </div>
 </section>
 
-<section class="vs">
-  <p class="section-label">Competitive Landscape</p>
-  <h2 class="section-title">Primis vs. existing tools.</h2>
-  <div class="vs-table">
-    <div class="vs-row header">
-      <div class="vs-cell">Capability</div>
-      <div class="vs-cell">Drone Software</div>
-      <div class="vs-cell">Manual Survey</div>
-      <div class="vs-cell">Primis</div>
-    </div>
-    <div class="vs-row"><div class="vs-cell">Sensor Input</div><div class="vs-cell">UAV only</div><div class="vs-cell">Total station / Tape</div><div class="vs-cell">Any sensor</div></div>
-    <div class="vs-row"><div class="vs-cell">3D Reconstruction</div><div class="vs-cell">Cloud orthophoto</div><div class="vs-cell">CAD by hand</div><div class="vs-cell">On-premise 3D scene</div></div>
-    <div class="vs-row"><div class="vs-cell">Segmentation</div><div class="vs-cell">Basic detection</div><div class="vs-cell">None</div><div class="vs-cell">Deep AI segmentation</div></div>
-    <div class="vs-row"><div class="vs-cell">Quantification</div><div class="vs-cell">Manual measurement</div><div class="vs-cell">Manual</div><div class="vs-cell">Automatic</div></div>
-    <div class="vs-row"><div class="vs-cell">Change Detection</div><div class="vs-cell">Limited</div><div class="vs-cell">Manual comparison</div><div class="vs-cell">Automatic over time</div></div>
-    <div class="vs-row"><div class="vs-cell">Deployment</div><div class="vs-cell">Cloud only</div><div class="vs-cell">Office workstation</div><div class="vs-cell">Edge / On-Premise</div></div>
-    <div class="vs-row"><div class="vs-cell">Output</div><div class="vs-cell">Static report</div><div class="vs-cell">Drawings</div><div class="vs-cell">Verified + Explainable</div></div>
+<section id="platform">
+  <p class="section-label">How it works</p>
+  <div class="platform-header">
+    <h2 class="section-title">From raw data<br>to verified decision.</h2>
+    <p class="platform-desc">Primis ingests any sensor input, reconstructs the scene in 3D, segments it, computes the metrics you need, and returns an audit-ready output.</p>
+  </div>
+  <div class="pipeline">
+    <div class="pipeline-step"><p class="pipeline-step-num">01</p><p class="pipeline-step-name">Input</p><p class="pipeline-step-desc">LiDAR · Camera · Drone · Satellite · Any sensor</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">02</p><p class="pipeline-step-name">3D Reconstruction</p><p class="pipeline-step-desc">Gaussian Splatting · Point Cloud · Real-time</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">03</p><p class="pipeline-step-name">Segmentation</p><p class="pipeline-step-desc">Objects · Semantics · Tracking · Multi-modal</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">04</p><p class="pipeline-step-name">AI Analysis</p><p class="pipeline-step-desc">Scene Understanding · Change Detection</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">05</p><p class="pipeline-step-name">Quantification</p><p class="pipeline-step-desc">Volumes · Counts · Deltas · Geometries</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">06</p><p class="pipeline-step-name">Decision</p><p class="pipeline-step-desc">Verified · Explainable · Audit-Ready</p></div>
+  </div>
+  <div class="capabilities-grid">
+    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="0.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="0.5" y="8.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="8.5" width="5" height="5" stroke="#999"/></svg></div><p class="capability-title">Any Sensor Input</p><p class="capability-desc">LiDAR, RGB camera, drone footage, satellite imagery — Primis processes any format without reconfiguration.</p></div>
+    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#999"/><path d="M7 3.5V7L9.5 8.5" stroke="#999" stroke-linecap="round"/></svg></div><p class="capability-title">On-Premise &amp; Offline</p><p class="capability-desc">Runs on edge hardware. No cloud upload — works on isolated sites and with sensitive project data.</p></div>
+    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 11V8M5 11V5M9 11V3M13 11V7" stroke="#999" stroke-linecap="round"/></svg></div><p class="capability-title">Quantified Insights</p><p class="capability-desc">Volumes, counts, deltas, BIM deviations — computed automatically from every flight and dataset.</p></div>
+    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="capability-title">Audit-Ready Output</p><p class="capability-desc">Every result with 3D proof, confidence score, and full traceability. No black boxes.</p></div>
   </div>
 </section>
 
-<section class="team" id="team">
-  <p class="section-label">Team</p>
-  <div class="team-layout">
-    <img src="photo.jpg" alt="Vladislav Praznik" class="team-photo">
-    <div>
-      <h2 class="team-name">Vladislav<br>Praznik</h2>
-      <p class="team-title">Founder &amp; CEO · Primis UG</p>
-      <div class="team-fact"><span class="team-fact-label">Background</span><span class="team-fact-value">Jugend Forscht Bundeswettbewerb 2025 — AI-optimised robotic teleoperation system</span></div>
-      <div class="team-fact"><span class="team-fact-label">Built</span><span class="team-fact-value">7-DOF robotic arm with stereo vision, physics simulation, and full teleoperation stack</span></div>
-      <div class="team-fact"><span class="team-fact-label">Stack</span><span class="team-fact-value">Python · Computer Vision · 3D Reconstruction · Deep Learning</span></div>
-      <div class="team-fact"><span class="team-fact-label">Company</span><span class="team-fact-value">Primis UG (haftungsbeschränkt) · Rödermark, Hessen · Founded April 2026</span></div>
-      <div class="team-fact"><span class="team-fact-label">Vision</span><span class="team-fact-value">Bringing spatial intelligence from the lab to construction sites, rail networks, and container yards across Europe.</span></div>
-      <div class="team-cta"><a href="#contact" class="btn-primary" style="margin-top:40px">Work with us <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<section class="pilot" id="pilot">
+  <p class="section-label">Pilot Programme</p>
+  <div class="pilot-header">
+    <h2 class="section-title">Now onboarding<br>pilot partners.</h2>
+    <p class="pilot-desc">Primis is in early access. We're working with selected partners across construction, infrastructure, and logistics throughout 2026 — to validate on real operational data and shape what we ship next.</p>
+  </div>
+  <div class="pilot-grid">
+    <div class="pilot-card">
+      <p class="pilot-num">01</p>
+      <h3 class="pilot-name">Validation, not commitment</h3>
+      <p class="pilot-text">Fixed scope, 4–6 weeks, then you decide whether to continue.</p>
+    </div>
+    <div class="pilot-card">
+      <p class="pilot-num">02</p>
+      <h3 class="pilot-name">Real deliverables</h3>
+      <p class="pilot-text">3D site model, metrics, and change tracking your team can actually use.</p>
+    </div>
+    <div class="pilot-card">
+      <p class="pilot-num">03</p>
+      <h3 class="pilot-name">Direct technical access</h3>
+      <p class="pilot-text">Working with engineering, not a sales layer.</p>
+    </div>
+    <div class="pilot-card">
+      <p class="pilot-num">04</p>
+      <h3 class="pilot-name">Roadmap influence</h3>
+      <p class="pilot-text">Your operational reality shapes what we ship next.</p>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <h2 class="contact-headline">Let's talk.</h2>
-  <p class="contact-sub">Whether you operate construction sites, manage infrastructure assets, or run a logistics terminal — we'd like to hear from you.</p>
-  <a href="mailto:praznik@primisintel.com" class="contact-email">praznik@primisintel.com</a>
+  <h2 class="contact-headline">Apply for pilot.</h2>
+  <p class="contact-sub">Tell us about your sites, your sensors, your use case. We'll respond within two business days with a 30-minute call to scope a pilot — or an honest no.</p>
+  <a href="mailto:praznik@primisintelligence.com?subject=Pilot%20enquiry" class="contact-email">praznik@primisintelligence.com</a>
 </section>
 
 <footer>
-  <span class="footer-logo">Primis</span>
-  <span class="footer-info">Primis UG (haftungsbeschränkt) · Rödermark, Hessen · Deutschland · © 2026</span>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">Primis</a>
+      <p class="footer-tagline">3D Spatial Intelligence for industry — built in Germany.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Product</p>
+      <ul>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#platform">How it works</a></li>
+        <li><a href="#pilot">Pilot Programme</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Company</p>
+      <ul>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="mailto:praznik@primisintelligence.com">Email</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Legal</p>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-info">Primis UG (haftungsbeschränkt) · Rödermark, Hessen · Deutschland</span>
+    <span class="footer-copyright">© 2026 Primis UG. All rights reserved.</span>
+  </div>
 </footer>
 
 </body>
