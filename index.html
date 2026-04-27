@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Primis — 3D Spatial Intelligence</title>
-<meta name="description" content="3D Spatial Intelligence for construction, infrastructure, and logistics. From drones, LiDAR and cameras to operational decisions — built in Germany.">
-<meta property="og:title" content="Primis — 3D Spatial Intelligence">
-<meta property="og:description" content="From drones, LiDAR and cameras to operational decisions — for construction, infrastructure, and logistics.">
+<title>Primis — 3D-Raumintelligenz</title>
+<meta name="description" content="3D-Raumintelligenz für Bau, Infrastruktur und Logistik. Von Drohnen, LiDAR und Kameras zu messbaren Entscheidungen — entwickelt in Deutschland.">
+<meta property="og:title" content="Primis — 3D-Raumintelligenz">
+<meta property="og:description" content="Von Drohnen, LiDAR und Kameras zu messbaren Entscheidungen — für Bau, Infrastruktur und Logistik.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://primisintelligence.com">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Primis — 3D Spatial Intelligence">
-<meta name="twitter:description" content="From drones, LiDAR and cameras to operational decisions — for construction, infrastructure, and logistics.">
+<meta name="twitter:title" content="Primis — 3D-Raumintelligenz">
+<meta name="twitter:description" content="Von Drohnen, LiDAR und Kameras zu messbaren Entscheidungen — für Bau, Infrastruktur und Logistik.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080808'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-size='22' font-weight='900' fill='white'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css2?family=DM+Sans:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.bunny.net/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,7 +22,7 @@
   "name": "Primis UG",
   "alternateName": "Primis",
   "url": "https://primisintelligence.com",
-  "email": "praznik@primisintelligence.com",
+  "email": "info@primisintelligence.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Rödermark",
@@ -31,7 +31,7 @@
   },
   "founder": { "@type": "Person", "name": "Vladislav Praznik" },
   "foundingDate": "2026-04",
-  "description": "3D Spatial Intelligence for construction, infrastructure, and logistics."
+  "description": "3D-Raumintelligenz für Bau, Infrastruktur und Logistik."
 }
 </script>
 <style>
@@ -53,8 +53,8 @@ html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--white); color: var(--black); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 72px; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.nav-logo { font-family: var(--font-display); font-size: 18px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); text-decoration: none; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 64px; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.nav-logo { font-family: var(--font-display); font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); text-decoration: none; }
 .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
 .nav-links a { font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--black); }
@@ -62,12 +62,14 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .nav-cta:hover { opacity: 0.8; }
 
 /* HERO */
-.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 60px; position: relative; overflow: hidden; }
-.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 40px; display: flex; align-items: center; gap: 16px; animation: fadeUp 0.6s ease both; }
+.hero { min-height: auto; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); align-items: start; align-content: start; gap: 56px; padding: 92px 60px 80px; position: relative; overflow: hidden; }
+.hero-copy { position: relative; z-index: 1; }
+.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 22px; display: flex; align-items: center; gap: 16px; animation: fadeUp 0.6s ease both; }
 .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gray-400); }
-.hero-headline { font-family: var(--font-display); font-size: clamp(52px, 7.5vw, 100px); font-weight: 800; line-height: 1.0; letter-spacing: -0.02em; color: var(--black); max-width: 860px; margin-bottom: 40px; animation: fadeUp 0.6s 0.1s ease both; }
+.hero-headline { font-family: var(--font-body); font-size: clamp(34px, 4.2vw, 56px); font-weight: 500; line-height: 1.12; letter-spacing: -0.01em; color: var(--black); max-width: 620px; margin-bottom: 28px; animation: fadeUp 0.6s 0.1s ease both; }
 .hero-headline span { color: var(--gray-400); }
-.hero-sub { font-size: 18px; font-weight: 300; color: var(--gray-600); max-width: 480px; line-height: 1.7; margin-bottom: 56px; animation: fadeUp 0.6s 0.2s ease both; }
+.hero-sub { font-size: 18px; font-weight: 300; color: var(--gray-600); max-width: 480px; line-height: 1.7; margin-bottom: 22px; animation: fadeUp 0.6s 0.2s ease both; }
+.hero-usecase { font-family: var(--font-display); font-size: clamp(18px, 2vw, 24px); font-weight: 700; letter-spacing: -0.01em; color: var(--black); max-width: 520px; line-height: 1.25; margin-bottom: 56px; animation: fadeUp 0.6s 0.25s ease both; }
 .hero-actions { display: flex; align-items: center; gap: 32px; animation: fadeUp 0.6s 0.3s ease both; }
 .btn-primary { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--white); background: var(--black); padding: 16px 36px; text-decoration: none; transition: opacity 0.2s; }
 .btn-primary:hover { opacity: 0.75; }
@@ -76,6 +78,23 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .btn-secondary { font-size: 14px; font-weight: 400; color: var(--gray-600); text-decoration: none; border-bottom: 1px solid var(--gray-200); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
 .btn-secondary:hover { color: var(--black); border-color: var(--black); }
 .hero-grid-bg { position: absolute; top: 0; right: 0; width: 55%; height: 100%; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(to left, rgba(0,0,0,0.12), transparent); pointer-events: none; }
+.hero-visual { position: relative; z-index: 1; border: 1px solid var(--line); background: var(--white); min-height: 520px; display: grid; grid-template-rows: auto 1fr auto; box-shadow: 0 24px 80px rgba(0,0,0,0.06); animation: fadeUp 0.6s 0.2s ease both; }
+.visual-topbar { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+.visual-title { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-400); }
+.visual-status { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--gray-600); }
+.visual-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #18a058; display: block; }
+.visual-scene { position: relative; min-height: 330px; overflow: hidden; background: linear-gradient(180deg, #fbfbfb 0%, #f2f2f2 100%); }
+.visual-scene::before { content: ''; position: absolute; inset: 14%; background-image: radial-gradient(circle, rgba(0,0,0,0.34) 1px, transparent 1.6px); background-size: 18px 18px; transform: perspective(780px) rotateX(58deg) rotateZ(-18deg); transform-origin: center; opacity: 0.82; }
+.visual-scan { position: absolute; left: 16%; right: 16%; top: 18%; height: 1px; background: rgba(0,0,0,0.72); box-shadow: 0 10px 26px rgba(0,0,0,0.12); animation: scanLine 4s ease-in-out infinite; }
+.visual-box { position: absolute; border: 1px solid rgba(0,0,0,0.48); background: rgba(255,255,255,0.22); }
+.visual-box.one { width: 120px; height: 74px; left: 18%; top: 42%; }
+.visual-box.two { width: 92px; height: 56px; right: 20%; top: 32%; }
+.visual-box.three { width: 76px; height: 48px; right: 28%; bottom: 20%; }
+.visual-metrics { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.visual-metric { padding: 20px; border-right: 1px solid var(--line); }
+.visual-metric:last-child { border-right: none; }
+.metric-label { font-size: 10px; color: var(--gray-400); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+.metric-value { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
 
 /* SECTIONS */
 section { padding: 120px 60px; }
@@ -125,13 +144,32 @@ section { padding: 120px 60px; }
 .pilot-num { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 28px; }
 .pilot-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.25; }
 .pilot-text { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 300; }
+.pilot-fit { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 2px; border: 1px solid rgba(255,255,255,0.08); border-top: none; }
+.pilot-fit-item { padding: 26px 32px; border-right: 1px solid rgba(255,255,255,0.06); }
+.pilot-fit-item:last-child { border-right: none; }
+.pilot-fit-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 10px; }
+.pilot-fit-text { font-size: 13px; color: rgba(255,255,255,0.56); line-height: 1.6; }
 
 /* CONTACT */
-.contact { text-align: center; padding: 160px 60px; }
-.contact-headline { font-family: var(--font-display); font-size: clamp(56px, 8vw, 108px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.0; margin-bottom: 28px; }
-.contact-sub { font-size: 17px; color: var(--gray-600); font-weight: 300; margin-bottom: 56px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.contact { text-align: center; padding: 120px 60px; }
+.contact-headline { font-family: var(--font-body); font-size: clamp(30px, 3.6vw, 48px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; margin-bottom: 22px; }
+.contact-sub { font-size: 16px; color: var(--gray-600); font-weight: 300; margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
 .contact-email { display: inline-block; font-family: var(--font-display); font-size: clamp(18px, 2.5vw, 28px); font-weight: 600; color: var(--black); text-decoration: none; border-bottom: 2px solid var(--black); padding-bottom: 4px; transition: opacity 0.2s; letter-spacing: -0.01em; }
 .contact-email:hover { opacity: 0.45; }
+.contact-form-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin: 56px 0 24px; }
+.contact-form { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; text-align: left; }
+.form-field { display: flex; flex-direction: column; gap: 8px; }
+.form-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; }
+.form-input, .form-textarea { font-family: var(--font-body); font-size: 15px; color: var(--black); background: transparent; border: none; border-bottom: 1px solid var(--gray-200); padding: 10px 0; transition: border-color 0.2s; outline: none; width: 100%; }
+.form-input:focus, .form-textarea:focus { border-color: var(--black); }
+.form-textarea { min-height: 100px; line-height: 1.5; resize: vertical; font-family: var(--font-body); }
+.form-submit { align-self: flex-start; border: none; cursor: pointer; font-family: var(--font-body); margin-top: 8px; }
+.form-status { font-size: 13px; color: var(--gray-600); margin-top: 8px; min-height: 18px; }
+.form-status.error { color: #c1272d; }
+.form-status.success { color: #18a058; }
+.contact-alt { font-size: 13px; color: var(--gray-400); margin-top: 40px; }
+.contact-alt a { color: var(--gray-600); text-decoration: none; border-bottom: 1px solid var(--gray-200); transition: color 0.2s, border-color 0.2s; }
+.contact-alt a:hover { color: var(--black); border-color: var(--black); }
 
 /* FOOTER */
 footer { padding: 80px 60px 36px; border-top: 1px solid var(--line); }
@@ -148,20 +186,32 @@ footer { padding: 80px 60px 36px; border-top: 1px solid var(--line); }
 
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scanLine { 0%, 100% { transform: translateY(0); opacity: 0.25; } 50% { transform: translateY(220px); opacity: 0.8; } }
 
 @media (max-width: 1024px) {
   nav, section, .hero, footer { padding-left: 32px; padding-right: 32px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-visual { min-height: 460px; }
   .pipeline { grid-template-columns: repeat(2, 1fr); }
   .pipeline-step:nth-child(2) { border-right: none; }
   .capabilities-grid { grid-template-columns: 1fr; }
   .industries-grid { grid-template-columns: 1fr; }
   .pilot-grid { grid-template-columns: repeat(2, 1fr); }
   .pilot-card:nth-child(2) { border-right: none; }
+  .pilot-fit { grid-template-columns: 1fr; }
+  .pilot-fit-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .pilot-fit-item:last-child { border-bottom: none; }
   .industries-header, .platform-header, .pilot-header { flex-direction: column; align-items: flex-start; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media (max-width: 768px) {
   .nav-links li:not(:last-child) { display: none; }
+  .hero { padding-top: 84px; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .hero-visual { min-height: 390px; }
+  .visual-metrics { grid-template-columns: 1fr; }
+  .visual-metric { border-right: none; border-bottom: 1px solid var(--line); padding: 16px 20px; }
+  .visual-metric:last-child { border-bottom: none; }
   .pipeline { grid-template-columns: 1fr; }
   .pipeline-step { border-right: none; border-bottom: 1px solid var(--line); }
   .pipeline-step:last-child { border-bottom: none; }
@@ -179,148 +229,245 @@ footer { padding: 80px 60px 36px; border-top: 1px solid var(--line); }
 <nav>
   <a href="#" class="nav-logo">Primis</a>
   <ul class="nav-links">
-    <li><a href="#industries">Industries</a></li>
-    <li><a href="#platform">How it works</a></li>
+    <li><a href="#industries">Branchen</a></li>
+    <li><a href="#platform">Ablauf</a></li>
     <li><a href="#pilot">Pilot</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Kontakt</a></li>
   </ul>
 </nav>
 
 <section class="hero" id="home">
   <div class="hero-grid-bg"></div>
-  <p class="hero-eyebrow">Spatial Intelligence &nbsp;·&nbsp; Rödermark, Deutschland &nbsp;·&nbsp; Est. 2026</p>
-  <h1 class="hero-headline">3D Spatial<br>Intelligence<br><span>for Industry.</span></h1>
-  <p class="hero-sub">From drones, LiDAR and cameras to operational decisions — for construction, infrastructure, and logistics.</p>
-  <div class="hero-actions">
-    <a href="#pilot" class="btn-primary">
-      Request pilot access
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <a href="#platform" class="btn-secondary">See how it works</a>
+  <div class="hero-copy">
+    <p class="hero-eyebrow">Räumliche Intelligenz &nbsp;·&nbsp; Rödermark, Deutschland &nbsp;·&nbsp; Seit 2026</p>
+    <h1 class="hero-headline">Raumintelligenz<br><span>für industrielle Standorte.</span></h1>
+    <p class="hero-sub">Primis verwandelt Drohnen-, LiDAR-, Kamera- und Satellitendaten in messbare Standortinformationen für Bau, Infrastruktur und Logistik.</p>
+    <div class="hero-actions">
+      <a href="#pilot" class="btn-primary">
+        Pilot anfragen
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#platform" class="btn-secondary">Ablauf ansehen</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-label="Vorschau einer 3D-Raumanalyse">
+    <div class="visual-topbar">
+      <p class="visual-title">Standortscan / Pilotvorschau</p>
+      <p class="visual-status">Analyse läuft</p>
+    </div>
+    <div class="visual-scene">
+      <span class="visual-scan"></span>
+      <span class="visual-box one"></span>
+      <span class="visual-box two"></span>
+      <span class="visual-box three"></span>
+    </div>
+    <div class="visual-metrics">
+      <div class="visual-metric">
+        <p class="metric-label">Volumenänderung</p>
+        <p class="metric-value">+8.4%</p>
+      </div>
+      <div class="visual-metric">
+        <p class="metric-label">Objekte erkannt</p>
+        <p class="metric-value">146</p>
+      </div>
+      <div class="visual-metric">
+        <p class="metric-label">Konfidenz</p>
+        <p class="metric-value">94%</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="industries" id="industries">
-  <p class="section-label">Industries</p>
+  <p class="section-label">Branchen</p>
   <div class="industries-header">
-    <h2 class="section-title">Built for three<br>core operations.</h2>
-    <p class="industries-desc">One platform, three verticals. The same pipeline solves measurement, monitoring, and inventory problems across construction sites, infrastructure assets, and logistics terminals.</p>
+    <h2 class="section-title">Für drei zentrale<br>Einsatzbereiche.</h2>
+    <p class="industries-desc">Ein fokussierter Pilot kann mit einem Standort, einer wiederkehrenden Inspektion oder einer konkreten operativen Frage starten. Dieselbe Pipeline unterstützt Messung, Überwachung und Bestandsanalyse in physischen Betriebsumgebungen.</p>
   </div>
   <div class="industries-grid">
     <div class="industry-card">
       <p class="industry-num">01</p>
-      <h3 class="industry-name">Construction</h3>
-      <p class="industry-tag">General Contractors · Earthworks · Building</p>
+      <h3 class="industry-name">Bau</h3>
+      <p class="industry-tag">Generalunternehmer · Erdarbeiten · Hochbau</p>
       <ul class="industry-list">
-        <li>Daily progress tracking from drone flights</li>
-        <li>Volumetric measurement of stockpiles and excavation</li>
-        <li>BIM as-built deviation analysis</li>
-        <li>Site safety and access monitoring</li>
+        <li>Automatischer Baubericht aus Baustellenaufnahmen</li>
+        <li>Tägliche Fortschrittsanalyse aus Drohnenflügen</li>
+        <li>Abgleich zwischen BIM und gebautem Zustand</li>
       </ul>
     </div>
     <div class="industry-card">
       <p class="industry-num">02</p>
-      <h3 class="industry-name">Infrastructure</h3>
-      <p class="industry-tag">Road Construction · Rail · Civil Engineering</p>
+      <h3 class="industry-name">Infrastruktur</h3>
+      <p class="industry-tag">Straßenbau · Schiene · Tiefbau</p>
       <ul class="industry-list">
-        <li>Pavement and rail asset inspection</li>
-        <li>Defect detection and severity classification</li>
-        <li>Change tracking across inspection cycles</li>
-        <li>Vegetation, clearance and geometry checks</li>
+        <li>Inspektion von Straßen, Gleisen und Anlagen</li>
+        <li>Veränderungsanalyse über Inspektionszyklen</li>
       </ul>
     </div>
     <div class="industry-card">
       <p class="industry-num">03</p>
-      <h3 class="industry-name">Logistics</h3>
-      <p class="industry-tag">Container Yards · Small &amp; Mid Terminals</p>
+      <h3 class="industry-name">Logistik</h3>
+      <p class="industry-tag">Containerflächen · Kleine &amp; mittlere Terminals</p>
       <ul class="industry-list">
-        <li>Real-time container inventory in 3D</li>
-        <li>Slot utilisation and yard state analytics</li>
-        <li>Equipment and asset tracking</li>
-        <li>Damage detection and condition reporting</li>
+        <li>3D-Bestandsaufnahme von Containern und Flächen</li>
+        <li>Analyse von Slot-Auslastung und Yard-Zustand</li>
       </ul>
     </div>
   </div>
 </section>
 
 <section id="platform">
-  <p class="section-label">How it works</p>
+  <p class="section-label">Ablauf</p>
   <div class="platform-header">
-    <h2 class="section-title">From raw data<br>to verified decision.</h2>
-    <p class="platform-desc">Primis ingests any sensor input, builds a full 3D scene, identifies what matters, computes the metrics you need, and returns an audit-ready output.</p>
+    <h2 class="section-title">Von Rohdaten<br>zu geprüften Ergebnissen.</h2>
+    <p class="platform-desc">Primis verarbeitet Sensordaten, rekonstruiert die reale Umgebung, erkennt relevante Veränderungen und liefert Kennzahlen, die Ihr Team am Ursprungsscan nachvollziehen kann.</p>
   </div>
   <div class="pipeline">
-    <div class="pipeline-step"><p class="pipeline-step-num">01</p><p class="pipeline-step-name">Scan</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">02</p><p class="pipeline-step-name">Reconstruct</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">03</p><p class="pipeline-step-name">Analyse</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">04</p><p class="pipeline-step-name">Decision</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">01</p><p class="pipeline-step-name">Erfassen</p><p class="pipeline-step-desc">LiDAR · Kamera · Drohne · Satellit · Bestehende Daten</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">02</p><p class="pipeline-step-name">Rekonstruieren</p><p class="pipeline-step-desc">3D-Szene · Punktwolke · Standortmodell</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">03</p><p class="pipeline-step-name">Analysieren</p><p class="pipeline-step-desc">Objekte · Veränderungen · Abweichungen</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">04</p><p class="pipeline-step-name">Entscheiden</p><p class="pipeline-step-desc">Geprüft · Erklärbar · Dokumentierbar</p></div>
   </div>
   <div class="capabilities-grid">
-    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="0.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="0.5" y="8.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="8.5" width="5" height="5" stroke="#999"/></svg></div><p class="capability-title">Any Sensor Input</p><p class="capability-desc">LiDAR, RGB camera, drone footage, satellite imagery — Primis processes any format without reconfiguration.</p></div>
-    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 11V8M5 11V5M9 11V3M13 11V7" stroke="#999" stroke-linecap="round"/></svg></div><p class="capability-title">Quantified Insights</p><p class="capability-desc">Volumes, counts, deltas, BIM deviations — computed automatically from every flight and dataset.</p></div>
-    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="capability-title">Audit-Ready Output</p><p class="capability-desc">Every result with 3D proof, confidence score, and full traceability. No black boxes.</p></div>
+    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="0.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="0.5" y="8.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="8.5" width="5" height="5" stroke="#999"/></svg></div><p class="capability-title">Flexible Sensordaten</p><p class="capability-desc">Start mit Daten, die bereits vorhanden sind: Drohnenbilder, LiDAR, RGB-Kameras, Satellitenbilder oder bestehende Punktwolken.</p></div>
+    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 11V8M5 11V5M9 11V3M13 11V7" stroke="#999" stroke-linecap="round"/></svg></div><p class="capability-title">Messbare Erkenntnisse</p><p class="capability-desc">Volumen, Zählungen, Deltas, BIM-Abweichungen und Veränderungsberichte aus jedem Scanzyklus.</p></div>
+    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="capability-title">Nachvollziehbare Ergebnisse</p><p class="capability-desc">Jedes Ergebnis mit 3D-Nachweis, Konfidenz und Rückverfolgbarkeit. Keine Blackbox.</p></div>
   </div>
 </section>
 
 <section class="pilot" id="pilot">
-  <p class="section-label">Pilot Programme</p>
+  <p class="section-label">Pilotprogramm</p>
   <div class="pilot-header">
-    <h2 class="section-title">Now onboarding<br>pilot partners.</h2>
-    <p class="pilot-desc">Primis is in early access. We're working with selected partners across construction, infrastructure, and logistics throughout 2026 — to validate on real operational data and shape what we ship next.</p>
+    <h2 class="section-title">Feldtest<br>mit echten Daten.</h2>
+    <p class="pilot-desc">Primis wird anhand realer Betriebsscans entwickelt, nicht mit Demo-Datensätzen. Der Pilot richtet sich an Teams, die bereits Standortdaten erfassen und prüfen möchten, ob 3D-Raumintelligenz manuelle Mess-, Inspektions- oder Berichtarbeit reduzieren kann.</p>
   </div>
   <div class="pilot-grid">
     <div class="pilot-card">
       <p class="pilot-num">01</p>
-      <h3 class="pilot-name">Validation, not commitment</h3>
-      <p class="pilot-text">Fixed scope, 4–6 weeks, then you decide whether to continue.</p>
+      <h3 class="pilot-name">Klarer Umfang</h3>
+      <p class="pilot-text">Ein Standort, eine Asset-Gruppe oder ein wiederkehrender Workflow mit einer klaren Fragestellung.</p>
     </div>
     <div class="pilot-card">
       <p class="pilot-num">02</p>
-      <h3 class="pilot-name">Real deliverables</h3>
-      <p class="pilot-text">3D site model, metrics, and change tracking your team can actually use.</p>
+      <h3 class="pilot-name">Praktisches Ergebnis</h3>
+      <p class="pilot-text">Eine 3D-Rekonstruktion, gemessene Kennzahlen und eine kurze technische Auswertung.</p>
     </div>
     <div class="pilot-card">
       <p class="pilot-num">03</p>
-      <h3 class="pilot-name">Direct technical access</h3>
-      <p class="pilot-text">Working with engineering, not a sales layer.</p>
+      <h3 class="pilot-name">Technische Prüfung</h3>
+      <p class="pilot-text">Die Ergebnisse werden gegen die Ausgangsdaten geprüft, damit Grenzen und Sicherheit sichtbar bleiben.</p>
     </div>
     <div class="pilot-card">
       <p class="pilot-num">04</p>
-      <h3 class="pilot-name">Roadmap influence</h3>
-      <p class="pilot-text">Your operational reality shapes what we ship next.</p>
+      <h3 class="pilot-name">Klare Einordnung</h3>
+      <p class="pilot-text">Am Ende ist klar, ob der Workflow nützlich genug für den nächsten Schritt ist.</p>
+    </div>
+  </div>
+  <div class="pilot-fit">
+    <div class="pilot-fit-item">
+      <p class="pilot-fit-label">Geeignet für</p>
+      <p class="pilot-fit-text">Bau-, Infrastruktur- oder Logistikteams mit wiederholbaren visuellen oder räumlichen Daten.</p>
+    </div>
+    <div class="pilot-fit-item">
+      <p class="pilot-fit-label">Benötigt</p>
+      <p class="pilot-fit-text">Beispielscans, der aktuelle manuelle Prozess und ein messbares Vergleichsziel.</p>
+    </div>
+    <div class="pilot-fit-item">
+      <p class="pilot-fit-label">Resultat</p>
+      <p class="pilot-fit-text">Eine kompakte Bewertung von Genauigkeit, Nutzen und Anforderungen für einen produktiven Einsatz.</p>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <h2 class="contact-headline">Apply for pilot.</h2>
-  <p class="contact-sub">Tell us about your sites, your sensors, your use case. We'll respond within two business days with a 30-minute call to scope a pilot — or an honest no.</p>
-  <a href="mailto:praznik@primisintelligence.com?subject=Pilot%20enquiry" class="contact-email">praznik@primisintelligence.com</a>
+  <h2 class="contact-headline">Pilot anfragen.</h2>
+  <p class="contact-form-eyebrow">Kontaktieren Sie uns</p>
+  <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="834174a2-8755-42e8-a286-e61869fb4dda">
+    <input type="hidden" name="subject" value="Neue Pilot-Anfrage über primisintelligence.com">
+    <input type="hidden" name="from_name" value="Primis Website">
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+    <div class="form-field">
+      <label for="form-name" class="form-label">Name</label>
+      <input id="form-name" name="name" type="text" class="form-input" required>
+    </div>
+    <div class="form-field">
+      <label for="form-email" class="form-label">E-Mail</label>
+      <input id="form-email" name="email" type="email" class="form-input" required>
+    </div>
+    <div class="form-field">
+      <label for="form-company" class="form-label">Unternehmen <span style="text-transform:none;color:var(--gray-200);">(optional)</span></label>
+      <input id="form-company" name="company" type="text" class="form-input">
+    </div>
+    <div class="form-field">
+      <label for="form-message" class="form-label">Nachricht</label>
+      <textarea id="form-message" name="message" class="form-textarea" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn-primary form-submit">
+      Nachricht senden
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+  </form>
+  <p class="contact-alt">Oder direkt per E-Mail: <a href="mailto:info@primisintelligence.com?subject=Pilot%20Anfrage">info@primisintelligence.com</a></p>
 </section>
+
+<script>
+(function() {
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    status.className = 'form-status';
+    status.textContent = 'Wird gesendet …';
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      return res.json().then(function(d) {
+        if (res.ok && d && d.success) {
+          form.reset();
+          status.className = 'form-status success';
+          status.textContent = 'Danke. Ihre Nachricht ist angekommen.';
+        } else {
+          status.className = 'form-status error';
+          status.textContent = (d && d.message) || 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+        }
+      });
+    }).catch(function() {
+      status.className = 'form-status error';
+      status.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+    });
+  });
+})();
+</script>
 
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#" class="footer-logo">Primis</a>
-      <p class="footer-tagline">3D Spatial Intelligence for industry — built in Germany.</p>
+      <p class="footer-tagline">3D-Raumintelligenz für industrielle Standorte — entwickelt in Deutschland.</p>
     </div>
     <div class="footer-col">
-      <p class="footer-heading">Product</p>
+      <p class="footer-heading">Produkt</p>
       <ul>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#platform">How it works</a></li>
-        <li><a href="#pilot">Pilot Programme</a></li>
+        <li><a href="#industries">Branchen</a></li>
+        <li><a href="#platform">Ablauf</a></li>
+        <li><a href="#pilot">Pilotprogramm</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <p class="footer-heading">Company</p>
+      <p class="footer-heading">Unternehmen</p>
       <ul>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="mailto:praznik@primisintelligence.com">Email</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li><a href="mailto:info@primisintelligence.com">E-Mail</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <p class="footer-heading">Legal</p>
+      <p class="footer-heading">Rechtliches</p>
       <ul>
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
@@ -329,10 +476,9 @@ footer { padding: 80px 60px 36px; border-top: 1px solid var(--line); }
   </div>
   <div class="footer-bottom">
     <span class="footer-info">Primis UG (haftungsbeschränkt) · Rödermark, Hessen · Deutschland</span>
-    <span class="footer-copyright">© 2026 Primis UG. All rights reserved.</span>
+    <span class="footer-copyright">© 2026 Primis UG. Alle Rechte vorbehalten.</span>
   </div>
 </footer>
 
 </body>
 </html>
-
