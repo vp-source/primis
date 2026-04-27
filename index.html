@@ -39,7 +39,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gray-400); }
 .hero-headline { font-family: var(--font-display); font-size: clamp(52px, 7.5vw, 100px); font-weight: 800; line-height: 1.0; letter-spacing: -0.02em; color: var(--black); max-width: 860px; margin-bottom: 40px; animation: fadeUp 0.6s 0.1s ease both; }
 .hero-headline span { color: var(--gray-400); }
-.hero-sub { font-size: 18px; font-weight: 300; color: var(--gray-600); max-width: 460px; line-height: 1.7; margin-bottom: 56px; animation: fadeUp 0.6s 0.2s ease both; }
+.hero-sub { font-size: 18px; font-weight: 300; color: var(--gray-600); max-width: 480px; line-height: 1.7; margin-bottom: 56px; animation: fadeUp 0.6s 0.2s ease both; }
 .hero-actions { display: flex; align-items: center; gap: 32px; animation: fadeUp 0.6s 0.3s ease both; }
 .btn-primary { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--white); background: var(--black); padding: 16px 36px; text-decoration: none; transition: opacity 0.2s; }
 .btn-primary:hover { opacity: 0.75; }
@@ -55,7 +55,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 /* SECTIONS */
 section { padding: 120px 60px; }
 .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 24px; display: flex; align-items: center; gap: 14px; }
-.section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gray-300); }
+.section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gray-200); }
 .section-title { font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 60px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); }
 
 /* PROBLEM */
@@ -84,6 +84,19 @@ section { padding: 120px 60px; }
 .solution-card-icon { width: 32px; height: 32px; border: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
 .solution-card-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
 .solution-card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; font-weight: 300; }
+
+/* INDUSTRIES */
+.industries { background: var(--off-white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.industries-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 60px; }
+.industries-desc { font-size: 16px; color: var(--gray-600); max-width: 380px; line-height: 1.7; font-weight: 300; flex-shrink: 0; }
+.industries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-100); border: 1px solid var(--line); }
+.industry-card { background: var(--white); padding: 48px 36px; display: flex; flex-direction: column; }
+.industry-num { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; margin-bottom: 28px; }
+.industry-name { font-family: var(--font-display); font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.1; }
+.industry-tag { font-size: 12px; color: var(--gray-400); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 28px; }
+.industry-list { list-style: none; border-top: 1px solid var(--line); }
+.industry-list li { font-size: 13.5px; color: var(--gray-600); padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; gap: 12px; line-height: 1.5; font-weight: 400; }
+.industry-list li::before { content: '—'; color: var(--gray-400); }
 
 /* VS */
 .vs { background: var(--black); color: var(--white); }
@@ -118,7 +131,7 @@ section { padding: 120px 60px; }
 /* CONTACT */
 .contact { text-align: center; padding: 160px 60px; }
 .contact-headline { font-family: var(--font-display); font-size: clamp(56px, 8vw, 108px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.0; margin-bottom: 28px; }
-.contact-sub { font-size: 17px; color: var(--gray-600); font-weight: 300; margin-bottom: 56px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.contact-sub { font-size: 17px; color: var(--gray-600); font-weight: 300; margin-bottom: 56px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
 .contact-email { display: inline-block; font-family: var(--font-display); font-size: clamp(18px, 2.5vw, 28px); font-weight: 600; color: var(--black); text-decoration: none; border-bottom: 2px solid var(--black); padding-bottom: 4px; transition: opacity 0.2s; letter-spacing: -0.01em; }
 .contact-email:hover { opacity: 0.45; }
 
@@ -136,9 +149,10 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
   .pipeline { grid-template-columns: repeat(3, 1fr); }
   .pipeline-step:nth-child(3) { border-right: none; }
   .solution-grid { grid-template-columns: repeat(2, 1fr); }
+  .industries-grid { grid-template-columns: 1fr; }
   .team-layout { grid-template-columns: 1fr; }
   .team-photo { max-width: 300px; }
-  .solution-header { flex-direction: column; align-items: flex-start; }
+  .solution-header, .industries-header { flex-direction: column; align-items: flex-start; }
   .hero-stat-bar { gap: 32px; flex-wrap: wrap; }
 }
 @media (max-width: 768px) {
@@ -157,6 +171,7 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
   <ul class="nav-links">
     <li><a href="#problem">Problem</a></li>
     <li><a href="#solution">Solution</a></li>
+    <li><a href="#industries">Industries</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -164,9 +179,9 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
 
 <section class="hero" id="home">
   <div class="hero-grid-bg"></div>
-  <p class="hero-eyebrow">Defence Technology &nbsp;·&nbsp; Rödermark, Deutschland &nbsp;·&nbsp; Est. 2026</p>
-  <h1 class="hero-headline">3D Spatial<br>Intelligence<br><span>for Defence.</span></h1>
-  <p class="hero-sub">Every sensor. Every environment. Verified decisions — offline, at the edge, in real time.</p>
+  <p class="hero-eyebrow">Spatial Intelligence &nbsp;·&nbsp; Rödermark, Deutschland &nbsp;·&nbsp; Est. 2026</p>
+  <h1 class="hero-headline">3D Spatial<br>Intelligence<br><span>for Industry.</span></h1>
+  <p class="hero-sub">From drones, LiDAR and cameras to operational decisions — for construction, infrastructure, and logistics.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-primary">
       Get in Touch
@@ -175,21 +190,21 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
     <a href="#solution" class="btn-secondary">See how it works</a>
   </div>
   <div class="hero-stat-bar">
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Industries Served</span></div>
     <div class="hero-stat"><span class="hero-stat-num">6</span><span class="hero-stat-label">Pipeline Stages</span></div>
     <div class="hero-stat"><span class="hero-stat-num">0</span><span class="hero-stat-label">Cloud Dependency</span></div>
     <div class="hero-stat"><span class="hero-stat-num">Any</span><span class="hero-stat-label">Sensor Input</span></div>
-    <div class="hero-stat"><span class="hero-stat-num">&lt;1ms</span><span class="hero-stat-label">Simulation Speed</span></div>
   </div>
 </section>
 
 <section class="problem" id="problem">
   <p class="section-label">The Problem</p>
   <div class="problem-layout">
-    <h2 class="section-title problem-statement">The Bundeswehr sees.<br><em>It doesn't understand.</em></h2>
+    <h2 class="section-title problem-statement">You collect the data.<br><em>Nobody reads it.</em></h2>
     <div>
-      <div class="problem-item"><span class="problem-num">01</span><div><p class="problem-item-title">Sensor data without intelligence</p><p class="problem-item-desc">LUNA NG, drones and satellites collect massive amounts of data. No system understands it in real time.</p></div></div>
-      <div class="problem-item"><span class="problem-num">02</span><div><p class="problem-item-title">Manual analysis is too slow</p><p class="problem-item-desc">Soldiers analyse footage manually. In modern conflicts, that is far too slow for operational decisions.</p></div></div>
-      <div class="problem-item"><span class="problem-num">03</span><div><p class="problem-item-title">Cloud-dependent systems fail</p><p class="problem-item-desc">Existing solutions require cloud connectivity. In contested environments without signal, they fail entirely.</p></div></div>
+      <div class="problem-item"><span class="problem-num">01</span><div><p class="problem-item-title">Drone scans pile up unused</p><p class="problem-item-desc">Site flights, LiDAR runs, photogrammetry — gigabytes of data with no automated way to extract numbers, deviations, or progress.</p></div></div>
+      <div class="problem-item"><span class="problem-num">02</span><div><p class="problem-item-title">Manual measurement costs days</p><p class="problem-item-desc">Volume calculations, defect surveys, container counts — done by hand, with delays, errors, and inconsistent results across teams.</p></div></div>
+      <div class="problem-item"><span class="problem-num">03</span><div><p class="problem-item-title">Cloud-only tools are a non-starter</p><p class="problem-item-desc">Remote sites, sensitive project data, slow uploads. Existing platforms assume permanent connectivity and offsite processing.</p></div></div>
     </div>
   </div>
 </section>
@@ -198,41 +213,84 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
   <p class="section-label">The Solution</p>
   <div class="solution-header">
     <h2 class="section-title">From raw data<br>to verified decision.</h2>
-    <p class="solution-desc">Primis takes any sensor input, automatically segments the scene, understands what is happening, simulates consequences, and returns a verified, explainable decision.</p>
+    <p class="solution-desc">Primis ingests any sensor input, reconstructs the scene in 3D, segments it, computes the metrics you need, and returns an audit-ready output.</p>
   </div>
   <div class="pipeline">
     <div class="pipeline-step"><p class="pipeline-step-num">01</p><p class="pipeline-step-name">Input</p><p class="pipeline-step-desc">LiDAR · Camera · Drone · Satellite · Any sensor</p></div>
     <div class="pipeline-step"><p class="pipeline-step-num">02</p><p class="pipeline-step-name">3D Reconstruction</p><p class="pipeline-step-desc">Gaussian Splatting · Point Cloud · Real-time</p></div>
     <div class="pipeline-step"><p class="pipeline-step-num">03</p><p class="pipeline-step-name">Segmentation</p><p class="pipeline-step-desc">Objects · Semantics · Tracking · Multi-modal</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">04</p><p class="pipeline-step-name">AI Analysis</p><p class="pipeline-step-desc">Scene Understanding · Intent Prediction</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">05</p><p class="pipeline-step-name">Simulation</p><p class="pipeline-step-desc">1000 scenarios · Physics engine · Milliseconds</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">06</p><p class="pipeline-step-name">Decision</p><p class="pipeline-step-desc">Verified · Explainable · Evidence-backed</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">04</p><p class="pipeline-step-name">AI Analysis</p><p class="pipeline-step-desc">Scene Understanding · Change Detection</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">05</p><p class="pipeline-step-name">Quantification</p><p class="pipeline-step-desc">Volumes · Counts · Deltas · Geometries</p></div>
+    <div class="pipeline-step"><p class="pipeline-step-num">06</p><p class="pipeline-step-name">Decision</p><p class="pipeline-step-desc">Verified · Explainable · Audit-Ready</p></div>
   </div>
   <div class="solution-grid">
     <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="0.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="0.5" y="8.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="8.5" width="5" height="5" stroke="#999"/></svg></div><p class="solution-card-title">Any Sensor Input</p><p class="solution-card-desc">LiDAR, RGB camera, drone footage, satellite imagery — Primis processes any format without reconfiguration.</p></div>
-    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#999"/><path d="M7 3.5V7L9.5 8.5" stroke="#999" stroke-linecap="round"/></svg></div><p class="solution-card-title">Edge Computing</p><p class="solution-card-desc">Fully offline. No cloud dependency. Runs on edge hardware in contested environments where connectivity fails.</p></div>
-    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#999" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="solution-card-title">Physics Simulation</p><p class="solution-card-desc">1000 scenarios simulated in milliseconds. Predict outcomes before committing to action.</p></div>
-    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="solution-card-title">Verified Output</p><p class="solution-card-desc">Every decision comes with a 3D proof, confidence score, and full explanation. No black boxes.</p></div>
+    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#999"/><path d="M7 3.5V7L9.5 8.5" stroke="#999" stroke-linecap="round"/></svg></div><p class="solution-card-title">On-Premise &amp; Offline</p><p class="solution-card-desc">Runs on edge hardware. No cloud upload required — works on isolated sites and with sensitive project data.</p></div>
+    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 11V8M5 11V5M9 11V3M13 11V7" stroke="#999" stroke-linecap="round"/></svg></div><p class="solution-card-title">Quantified Insights</p><p class="solution-card-desc">Volumes, counts, deltas, BIM deviations — computed automatically from every flight and every dataset.</p></div>
+    <div class="solution-card"><div class="solution-card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="solution-card-title">Audit-Ready Output</p><p class="solution-card-desc">Every result with 3D proof, confidence score, and full traceability. No black boxes, no guesswork.</p></div>
+  </div>
+</section>
+
+<section class="industries" id="industries">
+  <p class="section-label">Industries</p>
+  <div class="industries-header">
+    <h2 class="section-title">Built for three<br>core operations.</h2>
+    <p class="industries-desc">One platform, three verticals. The same pipeline solves measurement, monitoring, and inventory problems across construction sites, infrastructure assets, and logistics terminals.</p>
+  </div>
+  <div class="industries-grid">
+    <div class="industry-card">
+      <p class="industry-num">01</p>
+      <h3 class="industry-name">Construction</h3>
+      <p class="industry-tag">General Contractors · Earthworks · Building</p>
+      <ul class="industry-list">
+        <li>Daily progress tracking from drone flights</li>
+        <li>Volumetric measurement of stockpiles and excavation</li>
+        <li>BIM as-built deviation analysis</li>
+        <li>Site safety and access monitoring</li>
+      </ul>
+    </div>
+    <div class="industry-card">
+      <p class="industry-num">02</p>
+      <h3 class="industry-name">Infrastructure</h3>
+      <p class="industry-tag">Road Construction · Rail · Civil Engineering</p>
+      <ul class="industry-list">
+        <li>Pavement and rail asset inspection</li>
+        <li>Defect detection and severity classification</li>
+        <li>Change tracking across inspection cycles</li>
+        <li>Vegetation, clearance and geometry checks</li>
+      </ul>
+    </div>
+    <div class="industry-card">
+      <p class="industry-num">03</p>
+      <h3 class="industry-name">Logistics</h3>
+      <p class="industry-tag">Container Yards · Small &amp; Mid Terminals</p>
+      <ul class="industry-list">
+        <li>Real-time container inventory in 3D</li>
+        <li>Slot utilisation and yard state analytics</li>
+        <li>Equipment and asset tracking</li>
+        <li>Damage detection and condition reporting</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section class="vs">
   <p class="section-label">Competitive Landscape</p>
-  <h2 class="section-title">Primis vs. existing solutions.</h2>
+  <h2 class="section-title">Primis vs. existing tools.</h2>
   <div class="vs-table">
     <div class="vs-row header">
-      <div class="vs-cell">Feature</div>
-      <div class="vs-cell">Farsight Vision</div>
-      <div class="vs-cell">Legacy Tools</div>
+      <div class="vs-cell">Capability</div>
+      <div class="vs-cell">Drone Software</div>
+      <div class="vs-cell">Manual Survey</div>
       <div class="vs-cell">Primis</div>
     </div>
-    <div class="vs-row"><div class="vs-cell">Sensor Input</div><div class="vs-cell">UAV only</div><div class="vs-cell">Separate systems</div><div class="vs-cell">Any sensor</div></div>
-    <div class="vs-row"><div class="vs-cell">3D Reconstruction</div><div class="vs-cell">Cloud-based</div><div class="vs-cell">Cloud / Offline</div><div class="vs-cell">Edge / Offline</div></div>
-    <div class="vs-row"><div class="vs-cell">Segmentation</div><div class="vs-cell">Change detection</div><div class="vs-cell">Basic detection</div><div class="vs-cell">Deep AI segmentation</div></div>
-    <div class="vs-row"><div class="vs-cell">Scene Understanding</div><div class="vs-cell">None</div><div class="vs-cell">None</div><div class="vs-cell">Spatial reasoning</div></div>
-    <div class="vs-row"><div class="vs-cell">Physics Simulation</div><div class="vs-cell">None</div><div class="vs-cell">None</div><div class="vs-cell">1000 scenarios / ms</div></div>
-    <div class="vs-row"><div class="vs-cell">Decision Output</div><div class="vs-cell">Map only</div><div class="vs-cell">Map only</div><div class="vs-cell">Verified + Explainable</div></div>
-    <div class="vs-row"><div class="vs-cell">Germany Presence</div><div class="vs-cell">Ukraine / Baltics</div><div class="vs-cell">Partial</div><div class="vs-cell">Primary focus</div></div>
+    <div class="vs-row"><div class="vs-cell">Sensor Input</div><div class="vs-cell">UAV only</div><div class="vs-cell">Total station / Tape</div><div class="vs-cell">Any sensor</div></div>
+    <div class="vs-row"><div class="vs-cell">3D Reconstruction</div><div class="vs-cell">Cloud orthophoto</div><div class="vs-cell">CAD by hand</div><div class="vs-cell">On-premise 3D scene</div></div>
+    <div class="vs-row"><div class="vs-cell">Segmentation</div><div class="vs-cell">Basic detection</div><div class="vs-cell">None</div><div class="vs-cell">Deep AI segmentation</div></div>
+    <div class="vs-row"><div class="vs-cell">Quantification</div><div class="vs-cell">Manual measurement</div><div class="vs-cell">Manual</div><div class="vs-cell">Automatic</div></div>
+    <div class="vs-row"><div class="vs-cell">Change Detection</div><div class="vs-cell">Limited</div><div class="vs-cell">Manual comparison</div><div class="vs-cell">Automatic over time</div></div>
+    <div class="vs-row"><div class="vs-cell">Deployment</div><div class="vs-cell">Cloud only</div><div class="vs-cell">Office workstation</div><div class="vs-cell">Edge / On-Premise</div></div>
+    <div class="vs-row"><div class="vs-cell">Output</div><div class="vs-cell">Static report</div><div class="vs-cell">Drawings</div><div class="vs-cell">Verified + Explainable</div></div>
   </div>
 </section>
 
@@ -242,12 +300,12 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
     <img src="photo.jpg" alt="Vladislav Praznik" class="team-photo">
     <div>
       <h2 class="team-name">Vladislav<br>Praznik</h2>
-      <p class="team-title">Founder & CEO · Primis UG</p>
+      <p class="team-title">Founder &amp; CEO · Primis UG</p>
       <div class="team-fact"><span class="team-fact-label">Background</span><span class="team-fact-value">Jugend Forscht Bundeswettbewerb 2025 — AI-optimised robotic teleoperation system</span></div>
       <div class="team-fact"><span class="team-fact-label">Built</span><span class="team-fact-value">7-DOF robotic arm with stereo vision, physics simulation, and full teleoperation stack</span></div>
-      <div class="team-fact"><span class="team-fact-label">Stack</span><span class="team-fact-value">Python · Computer Vision · Physics Simulation · Deep Learning</span></div>
+      <div class="team-fact"><span class="team-fact-label">Stack</span><span class="team-fact-value">Python · Computer Vision · 3D Reconstruction · Deep Learning</span></div>
       <div class="team-fact"><span class="team-fact-label">Company</span><span class="team-fact-value">Primis UG (haftungsbeschränkt) · Rödermark, Hessen · Founded April 2026</span></div>
-      <div class="team-fact"><span class="team-fact-label">Vision</span><span class="team-fact-value">The spatial intelligence layer for NATO's autonomous systems — built in Germany.</span></div>
+      <div class="team-fact"><span class="team-fact-label">Vision</span><span class="team-fact-value">Bringing spatial intelligence from the lab to construction sites, rail networks, and container yards across Europe.</span></div>
       <div class="team-cta"><a href="#contact" class="btn-primary" style="margin-top:40px">Work with us <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
   </div>
@@ -255,7 +313,7 @@ footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; a
 
 <section class="contact" id="contact">
   <h2 class="contact-headline">Let's talk.</h2>
-  <p class="contact-sub">Whether you're from the Bundeswehr, Palladion, CIHBw, or an investor — we want to hear from you.</p>
+  <p class="contact-sub">Whether you operate construction sites, manage infrastructure assets, or run a logistics terminal — we'd like to hear from you.</p>
   <a href="mailto:praznik@primisintel.com" class="contact-email">praznik@primisintel.com</a>
 </section>
 
