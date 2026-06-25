@@ -1,0 +1,11 @@
+# Cache policy — always serve the latest page + styling, cache heavy media.
+<IfModule mod_headers.c>
+  # HTML / CSS / JS: revalidate every request (ETag -> 304 if unchanged). No stale pages.
+  <FilesMatch "\.(html|css|js)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  # Images / video / fonts: cache for a week (URLs are cache-busted with ?v= when they change).
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico|mp4|webm|woff2|woff|ttf|otf)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
