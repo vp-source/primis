@@ -1,80 +1,125 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutz — Primis</title>
-<meta name="robots" content="noindex">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080808'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-size='22' font-weight='900' fill='white'%3EP%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css2?family=DM+Sans:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --black: #080808; --white: #ffffff; --gray-200: #d8d8d8; --gray-400: #a0a0a0; --gray-600: #606060; --line: rgba(0,0,0,0.07); --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif; }
-body { font-family: var(--font-body); background: var(--white); color: var(--black); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 72px; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.nav-logo { font-family: var(--font-display); font-size: 18px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); text-decoration: none; }
-.nav-back { font-size: 13px; font-weight: 400; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
-.nav-back:hover { color: var(--black); }
-.legal { max-width: 760px; margin: 0 auto; padding: 160px 60px 120px; }
-.legal-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 24px; display: flex; align-items: center; gap: 14px; }
-.legal-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gray-200); }
-.legal h1 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 60px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 56px; }
-.legal h2 { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.01em; }
-.legal h2:first-of-type { margin-top: 0; }
-.legal p { font-size: 15px; color: var(--gray-600); line-height: 1.75; margin-bottom: 12px; font-weight: 300; }
-.legal a { color: var(--black); text-decoration: underline; text-underline-offset: 3px; }
-.legal .placeholder { color: var(--gray-400); font-style: italic; }
-footer { padding: 36px 60px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.footer-logo { font-family: var(--font-display); font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; }
-.footer-info { font-size: 12px; color: var(--gray-400); }
-@media (max-width: 768px) { nav, .legal, footer { padding-left: 24px; padding-right: 24px; } .legal { padding-top: 120px; } }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Privacy Policy · Primis</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="theme-color" content="#eff0f2" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+  <style>
+    .legal{padding:clamp(28px,6vh,80px) var(--pad-x) clamp(60px,10vh,120px)}
+    .legal__wrap{max-width:760px;margin:0 auto}
+    .legal__back{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);text-decoration:none;margin-bottom:28px}
+    .legal__back:hover{color:var(--ink)}
+    .legal h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,56px);letter-spacing:-.02em;margin:0 0 6px;color:var(--ink)}
+    .legal__sub{font-family:var(--ui);font-size:14px;color:var(--ink-mute);margin:0 0 16px}
+    .legal__note{font-family:var(--ui);font-size:13.5px;line-height:1.5;color:var(--ink-mute);background:var(--bg-soft);border:1px solid var(--ink-line);border-radius:10px;padding:12px 14px;margin:0 0 36px}
+    .legal h2{font-family:var(--serif);font-weight:400;font-size:clamp(20px,2.4vw,26px);letter-spacing:-.01em;color:var(--ink);margin:38px 0 10px}
+    .legal p,.legal li{font-family:var(--ui);font-size:15px;line-height:1.68;color:var(--ink-2)}
+    .legal p{margin:0 0 12px}.legal ul{margin:0 0 12px;padding-left:20px}.legal li{margin:4px 0}
+    .legal address{font-style:normal;font-family:var(--ui);font-size:15px;line-height:1.7;color:var(--ink-2)}
+    .legal .ph{color:var(--accent-deep);background:color-mix(in oklab,var(--accent) 16%,transparent);padding:0 4px;border-radius:4px}
+    .legal a{color:var(--ink)}
+    .legal__foot{border-top:1px solid var(--ink-line);padding:26px var(--pad-x);display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
+    .legal__foot a{color:var(--ink-faint);text-decoration:none}.legal__foot a:hover{color:var(--ink)}
+  </style>
 </head>
 <body>
+  <header class="nav">
+    <a class="nav__brand" href="/" aria-label="Primis home">
+      <svg class="nav__mark" viewBox="0 0 60 84" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6,56 30,4 54,56"/><polyline points="6,56 30,80 54,56"/><line x1="30" y1="4" x2="30" y2="80"/></svg>
+      <span class="nav__word">Primis</span>
+    </a>
+    <div class="nav__right"><a class="pill" href="/#careers">Contact</a></div>
+  </header>
 
-<nav>
-  <a href="index.html" class="nav-logo">Primis</a>
-  <a href="index.html" class="nav-back">← Back to home</a>
-</nav>
+  <main class="legal">
+    <div class="legal__wrap">
+      <a class="legal__back" href="/">&larr; Back to Primis</a>
+      <h1>Privacy Policy</h1>
+      <p class="legal__sub">Datenschutzerklärung — last updated 22 June 2026</p>
+      <p class="legal__note">Template / Vorlage. Replace the <span class="ph">[placeholders]</span> and have it reviewed (e.g. eRecht24, activeMind, or a lawyer) before launch. If you target German consumers, add a German version. Complies in structure with GDPR (DSGVO) Art. 13 + § 25 TDDDG.</p>
 
-<main class="legal">
-  <p class="legal-eyebrow">Datenschutz</p>
-  <h1>Datenschutzerklärung</h1>
+      <h2>1. Controller</h2>
+      <p>The controller responsible for data processing on this website (Art. 4(7) GDPR) is:</p>
+      <address>
+        Primis Intelligence UG (haftungsbeschränkt)<br />
+        Am Karnweg 53<br />
+        63322 Rödermark, Germany<br />
+        Represented by the managing director: Vladislav Praznik<br />
+        Phone: +49 176 47152968<br />
+        Email: <a href="mailto:info@primisintelligence.com">info@primisintelligence.com</a>
+      </address>
 
-  <h2>1. Verantwortlicher</h2>
-  <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
-  Primis UG (haftungsbeschränkt)<br>
-  Vladislav Praznik<br>
-  <span class="placeholder">[Straße und Hausnummer]</span>, <span class="placeholder">[PLZ]</span> Rödermark<br>
-  E-Mail: <a href="mailto:praznik@primisintelligence.com">praznik@primisintelligence.com</a></p>
+      <h2>2. Overview</h2>
+      <p>We process personal data only where there is a legal basis to do so and to the extent
+        necessary to provide this website. This page explains what data we collect, why, on what
+        legal basis, and what rights you have.</p>
 
-  <h2>2. Allgemeines</h2>
-  <p>Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung dieser Website sowie zur Beantwortung Ihrer Anfragen erforderlich ist. Die Verarbeitung erfolgt auf Grundlage der Datenschutz-Grundverordnung (DSGVO), des Bundesdatenschutzgesetzes (BDSG) und sonstiger einschlägiger Vorschriften.</p>
+      <h2>3. Hosting &amp; server log files</h2>
+      <p>This site is hosted on IONOS Deploy Now by IONOS SE, Elgendorfer Straße 57, 56410
+        Montabaur, Germany. When you
+        visit, your browser automatically transmits data that the server stores in log files:
+        IP address, date and time of the request, the page requested, referrer URL, browser type
+        and operating system. This is necessary for secure, stable operation.</p>
+      <p>Legal basis: Art. 6(1)(f) GDPR (legitimate interest in operating the site securely).
+        Logs are deleted after <span class="ph">[e.g. 7–14 days]</span>. A data processing
+        agreement (Art. 28 GDPR) is in place with the host.</p>
 
-  <h2>3. Hosting</h2>
-  <p>Diese Website wird gehostet bei der IONOS SE, Elgendorfer Straße 57, 56410 Montabaur, Deutschland. IONOS verarbeitet im Rahmen des Webhostings personenbezogene Daten in unserem Auftrag (Auftragsverarbeitung gemäß Art. 28 DSGVO). Hierzu gehören insbesondere Server-Log-Dateien (IP-Adresse, Datum und Uhrzeit der Anfrage, übertragene Datenmenge, User Agent, Referrer). Die Speicherung erfolgt zur Sicherstellung des technischen Betriebs auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <h2>4. Cookies &amp; tracking</h2>
+      <p>This website uses <strong>only technically necessary</strong> data and currently sets no
+        analytics, advertising, or tracking cookies. Should we add any non-essential cookies or
+        tracking in future, we will request your prior consent via a consent banner
+        (§ 25(1) TDDDG, Art. 6(1)(a) GDPR) and update this policy.</p>
 
-  <h2>4. Schriftarten</h2>
-  <p>Diese Website verwendet Schriftarten von Bunny Fonts (fonts.bunny.net), einem datenschutzfreundlichen Dienst der BunnyWay d.o.o. mit Sitz in Slowenien. Bunny Fonts protokolliert keine IP-Adressen und setzt keine Cookies. Eine Übermittlung personenbezogener Daten an Dritte findet nicht statt.</p>
+      <h2>5. Fonts</h2>
+      <p>Fonts are <strong>self-hosted</strong> on our own server. No font data is requested from,
+        or transmitted to, Google or any third party when you load this site.</p>
 
-  <h2>5. Kontaktaufnahme per E-Mail</h2>
-  <p>Wenn Sie uns per E-Mail kontaktieren, werden die übermittelten Daten (E-Mail-Adresse, Inhalt der Nachricht, ggf. Name) zur Bearbeitung Ihrer Anfrage gespeichert. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b oder lit. f DSGVO. Daten werden gelöscht, sobald sie für den Zweck ihrer Erhebung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+      <h2>6. Contacting us</h2>
+      <p>If you contact us (e.g. by email or via the contact link), the data you provide is used
+        solely to handle your request. Legal basis: Art. 6(1)(b) GDPR (pre-contractual /
+        contractual) or Art. 6(1)(f) GDPR (legitimate interest in responding). We delete this
+        data once it is no longer required and no legal retention periods apply.</p>
 
-  <h2>6. Cookies und Tracking</h2>
-  <p>Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Dienste.</p>
+      <h2>7. Your rights</h2>
+      <p>Under the GDPR you have the right to:</p>
+      <ul>
+        <li>access your personal data (Art. 15)</li>
+        <li>rectification (Art. 16) and erasure (Art. 17)</li>
+        <li>restriction of processing (Art. 18)</li>
+        <li>data portability (Art. 20)</li>
+        <li>object to processing based on legitimate interest (Art. 21)</li>
+        <li>withdraw consent at any time, with effect for the future (Art. 7(3))</li>
+      </ul>
+      <p>To exercise any of these, contact us at
+        <a href="mailto:info@primisintelligence.com">info@primisintelligence.com</a>.</p>
 
-  <h2>7. Ihre Rechte</h2>
-  <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie ein Widerspruchsrecht (Art. 21). Beschwerden können Sie bei einer Datenschutz-Aufsichtsbehörde einreichen, in unserem Fall: Der Hessische Beauftragte für Datenschutz und Informationsfreiheit, Postfach 3163, 65021 Wiesbaden.</p>
+      <h2>8. Right to complain</h2>
+      <p>You have the right to lodge a complaint with a data protection supervisory authority
+        (Art. 77 GDPR). The authority competent for us (Hesse) is:</p>
+      <address>
+        Der Hessische Beauftragte für Datenschutz und Informationsfreiheit<br />
+        Postfach 3163, 65021 Wiesbaden<br />
+        <a href="https://datenschutz.hessen.de">datenschutz.hessen.de</a>
+      </address>
 
-  <h2>8. Aktualität</h2>
-  <p>Stand dieser Datenschutzerklärung: April 2026.</p>
-</main>
+      <h2>9. Encryption</h2>
+      <p>This site uses SSL/TLS encryption (HTTPS) to protect data transmitted between your
+        browser and our server.</p>
 
-<footer>
-  <a href="index.html" class="footer-logo">Primis</a>
-  <span class="footer-info">Primis UG (haftungsbeschränkt) · Rödermark, Hessen · Deutschland · © 2026</span>
-</footer>
+      <h2>10. Changes</h2>
+      <p>We may update this policy to reflect changes to the site or the law. The current version
+        is always available on this page.</p>
+    </div>
+  </main>
 
+  <footer class="legal__foot">
+    <span>© 2026 Primis</span>
+    <span><a href="/impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html">Datenschutz</a> &nbsp;·&nbsp; <a href="/">Home</a></span>
+  </footer>
 </body>
 </html>

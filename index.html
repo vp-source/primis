@@ -1,484 +1,422 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Primis — 3D-Raumintelligenz</title>
-<meta name="description" content="3D-Raumintelligenz für Bau, Infrastruktur und Logistik. Von Drohnen, LiDAR und Kameras zu messbaren Entscheidungen — entwickelt in Deutschland.">
-<meta property="og:title" content="Primis — 3D-Raumintelligenz">
-<meta property="og:description" content="Von Drohnen, LiDAR und Kameras zu messbaren Entscheidungen — für Bau, Infrastruktur und Logistik.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://primisintelligence.com">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Primis — 3D-Raumintelligenz">
-<meta name="twitter:description" content="Von Drohnen, LiDAR und Kameras zu messbaren Entscheidungen — für Bau, Infrastruktur und Logistik.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080808'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-size='22' font-weight='900' fill='white'%3EP%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Primis UG",
-  "alternateName": "Primis",
-  "url": "https://primisintelligence.com",
-  "email": "info@primisintelligence.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Rödermark",
-    "addressRegion": "Hessen",
-    "addressCountry": "DE"
-  },
-  "founder": { "@type": "Person", "name": "Vladislav Praznik" },
-  "foundingDate": "2026-04",
-  "description": "3D-Raumintelligenz für Bau, Infrastruktur und Logistik."
-}
-</script>
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --black: #080808;
-  --white: #ffffff;
-  --off-white: #fafafa;
-  --gray-50: #f4f4f4;
-  --gray-100: #ebebeb;
-  --gray-200: #d8d8d8;
-  --gray-400: #a0a0a0;
-  --gray-600: #606060;
-  --line: rgba(0,0,0,0.07);
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-}
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); background: var(--white); color: var(--black); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Primis · Spatial Intelligence</title>
+  <meta name="description" content="Primis converts images into editable, decomposed, engine-ready 3D worlds. Production assets creators can modify, animate, light, simulate, and ship." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="theme-color" content="#eff0f2" />
 
-/* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 64px; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.nav-logo { font-family: var(--font-display); font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); text-decoration: none; }
-.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
-.nav-links a { font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--black); }
-.nav-cta { font-size: 13px !important; font-weight: 500 !important; color: var(--white) !important; background: var(--black); padding: 10px 24px; }
-.nav-cta:hover { opacity: 0.8; }
+  <link rel="stylesheet" href="css/fonts.css" />
 
-/* HERO */
-.hero { min-height: auto; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); align-items: start; align-content: start; gap: 56px; padding: 92px 60px 80px; position: relative; overflow: hidden; }
-.hero-copy { position: relative; z-index: 1; }
-.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 22px; display: flex; align-items: center; gap: 16px; animation: fadeUp 0.6s ease both; }
-.hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gray-400); }
-.hero-headline { font-family: var(--font-body); font-size: clamp(34px, 4.2vw, 56px); font-weight: 500; line-height: 1.12; letter-spacing: -0.01em; color: var(--black); max-width: 620px; margin-bottom: 28px; animation: fadeUp 0.6s 0.1s ease both; }
-.hero-headline span { color: var(--gray-400); }
-.hero-sub { font-size: 18px; font-weight: 300; color: var(--gray-600); max-width: 480px; line-height: 1.7; margin-bottom: 22px; animation: fadeUp 0.6s 0.2s ease both; }
-.hero-usecase { font-family: var(--font-display); font-size: clamp(18px, 2vw, 24px); font-weight: 700; letter-spacing: -0.01em; color: var(--black); max-width: 520px; line-height: 1.25; margin-bottom: 56px; animation: fadeUp 0.6s 0.25s ease both; }
-.hero-actions { display: flex; align-items: center; gap: 32px; animation: fadeUp 0.6s 0.3s ease both; }
-.btn-primary { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--white); background: var(--black); padding: 16px 36px; text-decoration: none; transition: opacity 0.2s; }
-.btn-primary:hover { opacity: 0.75; }
-.btn-primary svg { transition: transform 0.2s; }
-.btn-primary:hover svg { transform: translateX(4px); }
-.btn-secondary { font-size: 14px; font-weight: 400; color: var(--gray-600); text-decoration: none; border-bottom: 1px solid var(--gray-200); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
-.btn-secondary:hover { color: var(--black); border-color: var(--black); }
-.hero-grid-bg { position: absolute; top: 0; right: 0; width: 55%; height: 100%; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(to left, rgba(0,0,0,0.12), transparent); pointer-events: none; }
-.hero-visual { position: relative; z-index: 1; border: 1px solid var(--line); background: var(--white); min-height: 520px; display: grid; grid-template-rows: auto 1fr auto; box-shadow: 0 24px 80px rgba(0,0,0,0.06); animation: fadeUp 0.6s 0.2s ease both; }
-.visual-topbar { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--line); }
-.visual-title { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-400); }
-.visual-status { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--gray-600); }
-.visual-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #18a058; display: block; }
-.visual-scene { position: relative; min-height: 330px; overflow: hidden; background: linear-gradient(180deg, #fbfbfb 0%, #f2f2f2 100%); }
-.visual-scene::before { content: ''; position: absolute; inset: 14%; background-image: radial-gradient(circle, rgba(0,0,0,0.34) 1px, transparent 1.6px); background-size: 18px 18px; transform: perspective(780px) rotateX(58deg) rotateZ(-18deg); transform-origin: center; opacity: 0.82; }
-.visual-scan { position: absolute; left: 16%; right: 16%; top: 18%; height: 1px; background: rgba(0,0,0,0.72); box-shadow: 0 10px 26px rgba(0,0,0,0.12); animation: scanLine 4s ease-in-out infinite; }
-.visual-box { position: absolute; border: 1px solid rgba(0,0,0,0.48); background: rgba(255,255,255,0.22); }
-.visual-box.one { width: 120px; height: 74px; left: 18%; top: 42%; }
-.visual-box.two { width: 92px; height: 56px; right: 20%; top: 32%; }
-.visual-box.three { width: 76px; height: 48px; right: 28%; bottom: 20%; }
-.visual-metrics { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
-.visual-metric { padding: 20px; border-right: 1px solid var(--line); }
-.visual-metric:last-child { border-right: none; }
-.metric-label { font-size: 10px; color: var(--gray-400); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
-.metric-value { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+  <link rel="stylesheet" href="css/landing.css" />
+  <style>
+    /* demo video section */
+    .video-wrap { width: min(960px, 100%); margin: 40px 0 0; }
+    .video-frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius, 14px);
+      overflow: hidden; border: 1px solid var(--ink-line, rgba(0,0,0,.1)); background: var(--bg-elev, #f3f3f5);
+      box-shadow: 0 34px 90px -44px rgba(0,0,0,.4); }
+    .video-frame video, .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+    .vposter { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 16px;
+      align-items: center; justify-content: center; color: var(--ink-mute, #5a5a5f);
+      font: 500 14px/1.5 var(--sans, 'Manrope', sans-serif);
+      background: radial-gradient(62% 62% at 50% 42%, rgba(0,0,0,.045), transparent); }
+    .vplay { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--ink, #14151a); color: #fff; box-shadow: 0 14px 32px -12px rgba(0,0,0,.5); }
+    /* real reconstruction thumbnails */
+    .world__visual--img { background-size: cover !important; background-position: center !important; }
 
-/* SECTIONS */
-section { padding: 80px 60px; }
-.section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 14px; display: flex; align-items: center; gap: 14px; }
-.section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gray-200); }
-.section-title { font-family: var(--font-body); font-size: clamp(34px, 4.2vw, 56px); font-weight: 500; line-height: 1.12; letter-spacing: -0.01em; color: var(--black); }
+    /* DENSE ONE-PAGER: collapse the full-screen-slide spacing (design untouched) */
+    .slide { min-height: auto !important; align-items: flex-start;
+      padding-top: clamp(52px, 7vh, 92px); padding-bottom: clamp(52px, 7vh, 92px); }
+    .slide--hero { min-height: clamp(580px, 88vh, 940px) !important;
+      padding-top: clamp(44px, 6vh, 80px); padding-bottom: clamp(28px, 4vh, 52px); }
+    .slide--about { align-items: flex-start; }
+    /* show content even if the external three.js reveal script fails to load */
+    .display__line, .kicker, .lede, .steps li, .compare__col, .world, .use, .cta-row {
+      opacity: 1 !important; transform: none !important; }
+  
 
-/* INDUSTRIES */
-.industries { background: var(--off-white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.industries-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 60px; }
-.industries-desc { font-size: 16px; color: var(--gray-600); max-width: 380px; line-height: 1.7; font-weight: 300; flex-shrink: 0; }
-.industries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-100); border: 1px solid var(--line); }
-.industry-card { background: var(--white); padding: 48px 36px; display: flex; flex-direction: column; }
-.industry-num { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; margin-bottom: 28px; }
-.industry-name { font-family: var(--font-display); font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.1; }
-.industry-tag { font-size: 12px; color: var(--gray-400); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 28px; }
-.industry-list { list-style: none; border-top: 1px solid var(--line); }
-.industry-list li { font-size: 13.5px; color: var(--gray-600); padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; gap: 12px; line-height: 1.5; font-weight: 400; }
-.industry-list li::before { content: '—'; color: var(--gray-400); }
+  
+    /* --- capabilities: click-to-demo list --- */
+    #capabilities.slide{padding-top:clamp(36px,4.5vh,60px);padding-bottom:clamp(36px,4.5vh,60px)}
+    .cap-head{max-width:720px;margin:0 auto;text-align:center}
+    .cap-intro{margin:16px auto 0;color:var(--ink-mute)}
+    .cap-cta{margin-top:26px}
+    .cap-grid{display:grid;grid-template-columns:minmax(0,410px) minmax(0,540px);justify-content:center;gap:clamp(48px,4.5vw,76px);align-items:stretch}
+    .cap-item{position:relative;border-top:1px solid var(--ink-line);padding:14px 0 14px 24px;cursor:pointer}
+    .cap-item:first-child{border-top:0}
+    .cap-item::before{content:"";position:absolute;left:0;top:27px;width:7px;height:7px;border-radius:50%;background:var(--ink);opacity:0;transform:scale(.4);transition:opacity .2s,transform .2s var(--ease)}
+    .cap-item.active::before{opacity:1;transform:scale(1)}
+    .cap-item h3{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.015em;line-height:1.12;color:var(--ink-faint);transition:color .2s var(--ease)}
+    .cap-item:hover h3{color:var(--ink-2)}
+    .cap-item p{display:none;font-size:13.5px;line-height:1.45;color:var(--ink-mute);margin:6px 0 4px;max-width:46ch}
+    .cap-item.active h3{color:var(--ink)}
+    .cap-item.active p{display:block}
+    .cap-media-wrap{position:relative;align-self:start}
+    .cap-media{position:relative;width:100%;aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;border:1px solid var(--ink-line);background:var(--bg-soft);box-shadow:0 24px 60px -40px rgba(0,0,0,.4)}
+    .cap-panel{position:absolute;inset:0;opacity:0;transition:opacity .35s var(--ease);background-size:cover;background-position:center}
+    .cap-panel.active{opacity:1}
+    .cap-panel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .cap-panel .tag{position:absolute;left:14px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:6px;backdrop-filter:blur(4px)}
+    .cap-panel--dark{display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;color:#c9cace;font-family:var(--ui);font-size:13.5px;text-align:center;padding:24px;background:radial-gradient(70% 70% at 50% 36%,rgba(255,255,255,.06),transparent),linear-gradient(180deg,#16181d,#0b0c0f)}
+    .cap-chat{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:30px;background:var(--bg-elev);font-family:var(--mono);font-size:14px}
+    .cap-chat .q{align-self:flex-start;max-width:82%;background:#fff;border:1px solid var(--ink-line);border-radius:12px;padding:12px 14px;color:var(--ink)}
+    .cap-chat .a{align-self:flex-end;max-width:82%;background:var(--ink);color:#fff;border-radius:12px;padding:12px 14px}
+    .loopdot{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8a8d96}
+    .loopdot::before{content:"";width:7px;height:7px;border-radius:50%;background:#18a058;box-shadow:0 0 0 3px rgba(24,160,88,.18)}
+    @media(max-width:900px){.cap-grid{grid-template-columns:1fr;gap:24px}.cap-media-wrap{position:static;order:-1}.cap-item p{display:block}}
 
-/* PLATFORM */
-.platform-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 60px; }
-.platform-desc { font-size: 16px; color: var(--gray-600); max-width: 380px; line-height: 1.7; font-weight: 300; flex-shrink: 0; }
-.pipeline { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); margin-bottom: 2px; }
-.pipeline-step { padding: 36px 24px; border-right: 1px solid var(--line); transition: background 0.2s; cursor: default; }
-.pipeline-step:last-child { border-right: none; }
-.pipeline-step:hover { background: var(--gray-50); }
-.pipeline-step-num { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; margin-bottom: 18px; }
-.pipeline-step-name { font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); margin-bottom: 12px; line-height: 1.3; }
-.pipeline-step-desc { font-size: 11.5px; color: var(--gray-400); line-height: 1.6; font-weight: 300; }
-.capabilities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-100); border: 1px solid var(--line); margin-top: 2px; }
-.capability-card { background: var(--white); padding: 40px 32px; }
-.capability-icon { width: 32px; height: 32px; border: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
-.capability-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
-.capability-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; font-weight: 300; }
+  
+    /* --- hero: contained rounded media card, centred headline --- */
+    .slide--hero{display:flex;align-items:center;justify-content:center;
+      padding:clamp(12px,1.6vw,22px) !important;overflow:visible}
+    .hero-bg{position:absolute;inset:clamp(12px,1.6vw,22px);border-radius:22px;overflow:hidden;z-index:-1;
+      box-shadow:0 50px 120px -60px rgba(0,0,0,.6)}
+    .hero-bg video{width:100%;height:100%;object-fit:cover}
+    .hero-bg::after{content:"";position:absolute;inset:0;background:
+      radial-gradient(78% 52% at 50% 48%,rgba(8,9,12,.62) 0%,rgba(8,9,12,.3) 52%,transparent 80%),
+      linear-gradient(180deg,rgba(8,9,12,.5) 0%,rgba(8,9,12,.12) 38%,rgba(8,9,12,.55) 100%)}
+    .slide--hero .hero__body{position:relative;max-width:780px;margin:0 auto;text-align:center}
+    .slide--hero .display{font-size:clamp(34px,4.4vw,60px)}
+    .slide--hero .display,.slide--hero .display__line{color:#f6f8fa}
+    .slide--hero .display__line--muted{color:#e2e6ec}
+    .slide--hero .display em{color:#fff}
+    .slide--hero .hero__signature{display:none}
+    .slide--hero .lede,.slide--hero .lede--sm{color:#d2d7de;margin:18px auto 0;max-width:560px}
+    .hero__scroll{position:absolute;left:50%;bottom:clamp(30px,5vh,52px);transform:translateX(-50%);
+      width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.5);
+      display:flex;align-items:center;justify-content:center;color:#fff;z-index:1}
 
-/* PILOT */
-.pilot { background: var(--black); color: var(--white); }
-.pilot .section-label { color: rgba(255,255,255,0.3); }
-.pilot .section-label::before { background: rgba(255,255,255,0.15); }
-.pilot .section-title { color: var(--white); }
-.pilot-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 60px; }
-.pilot-desc { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 460px; line-height: 1.7; font-weight: 300; flex-shrink: 0; }
-.pilot-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid rgba(255,255,255,0.08); }
-.pilot-card { padding: 40px 32px; border-right: 1px solid rgba(255,255,255,0.06); }
-.pilot-card:last-child { border-right: none; }
-.pilot-num { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 28px; }
-.pilot-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.25; }
-.pilot-text { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 300; }
-.pilot-fit { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 2px; border: 1px solid rgba(255,255,255,0.08); border-top: none; }
-.pilot-fit-item { padding: 26px 32px; border-right: 1px solid rgba(255,255,255,0.06); }
-.pilot-fit-item:last-child { border-right: none; }
-.pilot-fit-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 10px; }
-.pilot-fit-text { font-size: 13px; color: rgba(255,255,255,0.56); line-height: 1.6; }
+  
+    /* --- demo: tall media left, text right --- */
+    .demo-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:stretch}
+    .demo-media{position:relative;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;border:1px solid var(--ink-line);background:var(--bg-elev);box-shadow:0 30px 80px -48px rgba(0,0,0,.35)}
+    .demo-media video,.demo-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+    .demo-copy{display:flex;flex-direction:column;justify-content:center;background:#fff;border:1px solid var(--ink-line);border-radius:var(--radius);padding:clamp(30px,4vw,56px)}
+    @media(max-width:820px){.demo-grid{grid-template-columns:1fr;gap:26px}.demo-media{aspect-ratio:4/5;max-width:420px}}
 
-/* CONTACT */
-.contact { text-align: center; padding: 120px 60px; }
-.contact-headline { font-family: var(--font-body); font-size: clamp(30px, 3.6vw, 48px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; margin-bottom: 22px; }
-.contact-sub { font-size: 16px; color: var(--gray-600); font-weight: 300; margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-.contact-email { display: inline-block; font-family: var(--font-display); font-size: clamp(18px, 2.5vw, 28px); font-weight: 600; color: var(--black); text-decoration: none; border-bottom: 2px solid var(--black); padding-bottom: 4px; transition: opacity 0.2s; letter-spacing: -0.01em; }
-.contact-email:hover { opacity: 0.45; }
-.contact-form-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin: 56px 0 24px; }
-.contact-form { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; text-align: left; }
-.form-field { display: flex; flex-direction: column; gap: 8px; }
-.form-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; }
-.form-input, .form-textarea { font-family: var(--font-body); font-size: 15px; color: var(--black); background: transparent; border: none; border-bottom: 1px solid var(--gray-200); padding: 10px 0; transition: border-color 0.2s; outline: none; width: 100%; }
-.form-input:focus, .form-textarea:focus { border-color: var(--black); }
-.form-textarea { min-height: 100px; line-height: 1.5; resize: vertical; font-family: var(--font-body); }
-.form-submit { align-self: flex-start; border: none; cursor: pointer; font-family: var(--font-body); margin-top: 8px; }
-.form-status { font-size: 13px; color: var(--gray-600); margin-top: 8px; min-height: 18px; }
-.form-status.error { color: #c1272d; }
-.form-status.success { color: #18a058; }
-.contact-alt { font-size: 13px; color: var(--gray-400); margin-top: 40px; }
-.contact-alt a { color: var(--gray-600); text-decoration: none; border-bottom: 1px solid var(--gray-200); transition: color 0.2s, border-color 0.2s; }
-.contact-alt a:hover { color: var(--black); border-color: var(--black); }
+  
+    /* --- built-for compact strip --- */
+    .builtfor-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 22px;margin-top:16px;font-family:var(--serif);font-size:clamp(19px,2vw,26px);color:var(--ink-faint)}
+    .builtfor-row span{position:relative;padding-right:22px;color:var(--ink)}
+    .builtfor-row span:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;width:4px;height:4px;border-radius:50%;background:var(--ink-line);transform:translateY(-50%)}
 
-/* FOOTER */
-footer { padding: 80px 60px 36px; border-top: 1px solid var(--line); }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 48px; border-bottom: 1px solid var(--line); margin-bottom: 32px; }
-.footer-brand { display: flex; flex-direction: column; gap: 16px; }
-.footer-logo { font-family: var(--font-display); font-size: 18px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; }
-.footer-tagline { font-size: 13px; color: var(--gray-600); line-height: 1.6; max-width: 280px; font-weight: 300; }
-.footer-heading { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; margin-bottom: 20px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.footer-col a { font-size: 13px; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
-.footer-col a:hover { color: var(--black); }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.footer-info, .footer-copyright { font-size: 12px; color: var(--gray-400); }
+    /* --- founder highlights --- */
+    .founder-highlights{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 44px;max-width:880px}
+    .founder-highlights li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.5;color:var(--ink-mute)}
+    .founder-highlights li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+    .founder-highlights strong{color:var(--ink);font-weight:600}
+    @media(max-width:760px){.founder-highlights{grid-template-columns:1fr}}
+    .founder-portrait{width:248px;height:318px;border-radius:16px;overflow:hidden;margin:30px 0 6px;border:1px solid var(--ink-line);background:linear-gradient(160deg,#cfe7ec,#9fd0d9);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:72px;color:#0e2a30}
+    @media(max-width:560px){.founder-portrait{width:200px;height:256px}}
+    .founder-toggle{margin-top:20px;display:inline-flex;align-items:center;gap:12px;background:none;border:0;padding:0;cursor:pointer;font-family:var(--ui);font-size:15px;color:var(--ink)}
+    .founder-toggle__icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--ink-line);font-size:20px;line-height:1;transition:transform .3s var(--ease),background .2s}
+    .founder-toggle:hover .founder-toggle__icon{background:var(--bg-elev)}
+    .founder-toggle[aria-expanded="true"] .founder-toggle__icon{transform:rotate(45deg)}
+    .founder-details{overflow:hidden;max-height:0;opacity:0;transition:max-height .45s var(--ease),opacity .3s ease}
+    .founder-details.open{max-height:1000px;opacity:1}
 
-/* ANIMATIONS */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes scanLine { 0%, 100% { transform: translateY(0); opacity: 0.25; } 50% { transform: translateY(220px); opacity: 0.8; } }
-
-@media (max-width: 1024px) {
-  nav, section, .hero, footer { padding-left: 32px; padding-right: 32px; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-visual { min-height: 460px; }
-  .pipeline { grid-template-columns: repeat(2, 1fr); }
-  .pipeline-step:nth-child(2) { border-right: none; }
-  .capabilities-grid { grid-template-columns: 1fr; }
-  .industries-grid { grid-template-columns: 1fr; }
-  .pilot-grid { grid-template-columns: repeat(2, 1fr); }
-  .pilot-card:nth-child(2) { border-right: none; }
-  .pilot-fit { grid-template-columns: 1fr; }
-  .pilot-fit-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .pilot-fit-item:last-child { border-bottom: none; }
-  .industries-header, .platform-header, .pilot-header { flex-direction: column; align-items: flex-start; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-}
-@media (max-width: 768px) {
-  .nav-links li:not(:last-child) { display: none; }
-  .hero { padding-top: 84px; }
-  .hero-actions { align-items: flex-start; flex-direction: column; gap: 20px; }
-  .hero-visual { min-height: 390px; }
-  .visual-metrics { grid-template-columns: 1fr; }
-  .visual-metric { border-right: none; border-bottom: 1px solid var(--line); padding: 16px 20px; }
-  .visual-metric:last-child { border-bottom: none; }
-  .pipeline { grid-template-columns: 1fr; }
-  .pipeline-step { border-right: none; border-bottom: 1px solid var(--line); }
-  .pipeline-step:last-child { border-bottom: none; }
-  .capabilities-grid { grid-template-columns: 1fr; }
-  .pilot-grid { grid-template-columns: 1fr; }
-  .pilot-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .pilot-card:last-child { border-bottom: none; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
-}
-</style>
+  </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-logo">Primis</a>
-  <ul class="nav-links">
-    <li><a href="#industries">Branchen</a></li>
-    <li><a href="#platform">Ablauf</a></li>
-    <li><a href="#pilot">Pilot</a></li>
-    <li><a href="#contact" class="nav-cta">Kontakt</a></li>
-  </ul>
-</nav>
+  <!-- NAV -->
+  <header class="nav">
+    <a class="nav__brand" href="#top" aria-label="Primis home">
+      <svg class="nav__mark" viewBox="0 0 60 84" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6,56 30,4 54,56"/><polyline points="6,56 30,80 54,56"/><line x1="30" y1="4" x2="30" y2="80"/></svg>
+      <span class="nav__word">Primis</span>
+    </a>
 
-<section class="hero" id="home">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-copy">
-    <p class="hero-eyebrow">Räumliche Intelligenz &nbsp;·&nbsp; Rödermark, Deutschland &nbsp;·&nbsp; Seit 2026</p>
-    <h1 class="hero-headline">Raumintelligenz<br><span>für industrielle Standorte.</span></h1>
-    <p class="hero-sub">Primis verwandelt Drohnen-, LiDAR-, Kamera- und Satellitendaten in messbare Standortinformationen für Bau, Infrastruktur und Logistik.</p>
-    <div class="hero-actions">
-      <a href="#pilot" class="btn-primary">
-        Pilot anfragen
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="nav__right">
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#demo">Demo</a>
+        <a href="#capabilities">What it does</a>
+        <a href="#api">Worlds</a>
+      </nav>
+      <a class="pill" href="#careers">Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO: single statement, only thing on first page -->
+                <section class="slide slide--hero">
+      <div class="hero-bg">
+        <!-- Owned, self-hosted clip (generated): artistic stylized warehouse-sim flythrough, looping. -->
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="assets/hero-warehouse-artistic.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero__body">
+        <h1 class="display display--md">
+          <span class="display__line">Worlds you can act in,</span>
+          <span class="display__line display__line--muted"><em>from a single photo.</em></span>
+        </h1>
+        <div class="hero__signature">Primis</div>
+        <p class="lede lede--sm">
+          Primis is closing the gap between visual capture and simulation-ready
+          assets. It autonomously reconstructs worlds from a single image into
+          editable, engine-ready 3D scenes built for any pipeline.
+        </p>
+      </div>
+      <a class="hero__scroll" href="#demo" aria-label="Scroll to demo">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 L8 12 M4 8 L8 12 L12 8"/></svg>
       </a>
-      <a href="#platform" class="btn-secondary">Ablauf ansehen</a>
-    </div>
-  </div>
-  <div class="hero-visual" aria-label="Vorschau einer 3D-Raumanalyse">
-    <div class="visual-topbar">
-      <p class="visual-title">Standortscan / Pilotvorschau</p>
-      <p class="visual-status">Analyse läuft</p>
-    </div>
-    <div class="visual-scene">
-      <span class="visual-scan"></span>
-      <span class="visual-box one"></span>
-      <span class="visual-box two"></span>
-      <span class="visual-box three"></span>
-    </div>
-    <div class="visual-metrics">
-      <div class="visual-metric">
-        <p class="metric-label">Volumenänderung</p>
-        <p class="metric-value">+8.4%</p>
+    </section>
+
+
+    <!-- MISSION -->
+    <section id="mission" class="slide slide--left">
+      <div class="slide__body" style="max-width:920px;margin:0 auto;text-align:center">
+        <div class="kicker" style="justify-content:center">The mission</div>
+        <h2 class="display display--md">
+          <span class="display__line">The foundation everything</span>
+          <span class="display__line display__line--muted"><em>else is built on.</em></span>
+        </h2>
+        <p class="lede" style="margin:24px auto 0;max-width:600px">
+          Spatial intelligence and simulation are only as capable as the worlds they run in.
+        </p>
+        <p class="lede lede--sm" style="margin:14px auto 0;max-width:600px">
+          We build that foundation: autonomous, labeled world generation that turns raw capture
+          into metric, simulation-ready scenes, every object named, placed, and editable.
+        </p>
       </div>
-      <div class="visual-metric">
-        <p class="metric-label">Objekte erkannt</p>
-        <p class="metric-value">146</p>
+    </section>
+
+
+    <!-- DEMO VIDEO -->
+    <section id="demo" class="slide slide--left">
+      <div class="slide__body slide__body--wide">
+        <div class="demo-grid">
+          <div class="demo-media" style="background:#0b0c10">
+            <video autoplay muted loop playsinline preload="metadata" style="object-fit:cover;background:#0b0c10">
+              <source src="assets/primis-demo.mp4?v=3" type="video/mp4" />
+            </video>
+          </div>
+          <div class="demo-copy">
+            <div class="kicker">See it work</div>
+            <h2 class="display display--md">
+              <span class="display__line">Watch one photo</span>
+              <span class="display__line display__line--muted"><em>rebuild itself in 3D.</em></span>
+            </h2>
+            <p class="lede lede--sm">
+              Drop in a single image and watch Primis rebuild it into a fully editable,
+              to-scale 3D world, with every object placed, named, and ready to edit. Captured
+              live in Primis Studio.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="visual-metric">
-        <p class="metric-label">Konfidenz</p>
-        <p class="metric-value">94%</p>
+    </section>
+
+                <!-- CAPABILITIES (click-to-demo) -->
+    <section id="capabilities" class="slide slide--left">
+      <div class="slide__body slide__body--wide">
+        <div class="cap-head">
+          <div class="kicker">What it does</div>
+          <h2 class="display display--md">
+            <span class="display__line">One scene.</span>
+            <span class="display__line display__line--muted"><em>Put it to work.</em></span>
+          </h2>
+          <p class="lede lede--sm cap-intro">One photograph in. A spatially consistent, fully decomposed 3D world out. Reconstruct it, take it apart object by object, simulate inside it, and reason about it in plain language.</p>
+        </div>
+
+        <div class="cap-grid" style="margin-top:34px">
+          <div class="cap-list" id="capList">
+            <div class="cap-item active"><h3>Reconstruct</h3><p>Drop in a single image and Primis rebuilds the entire scene in 3D. Every object is placed at real-world scale, one after another.</p></div>
+            <div class="cap-item"><h3>Decompose</h3><p>Every object separates into its own clean, engine-ready mesh, individually selectable and named down to its sub-parts. You set the fidelity, from a quick layout to full detail.</p></div>
+            <div class="cap-item"><h3>Simulate</h3><p>Run robots and processes inside the world before you ever touch hardware. Grab a box off the shelf, place a tool inside it, and rehearse the whole task to scale.</p></div>
+            <div class="cap-item"><h3>Reason</h3><p>Every object in the scene is known, so you can ask about it in plain language. Pose a question like &ldquo;where is the white helmet?&rdquo; and get a grounded spatial answer.</p></div>
+            <div class="cap-item"><h3>Synthetic data</h3><p>Turn one real scene into thousands of aligned, labeled variations. You get endless training and test environments with no new capture required.</p></div>
+            <a class="pill cap-cta" href="#careers">Bring your first image</a>
+          </div>
+          <div class="cap-media-wrap">
+            <div class="cap-media" id="capMedia">
+              <!-- LAUNCH SWAP: replace a panel with a looping clip:
+                   <video autoplay muted loop playsinline><source src="assets/cap-x.mp4" type="video/mp4"></video> -->
+              <div class="cap-panel active"><video autoplay muted loop playsinline preload="metadata"><source src="assets/cap-reconstruct.mp4" type="video/mp4" /></video><span class="tag">Single image &rarr; 3D scene</span></div>
+              <div class="cap-panel"><video autoplay muted loop playsinline preload="metadata"><source src="assets/cap-decompose.mp4" type="video/mp4" /></video></div>
+              <div class="cap-panel"><img src="assets/cap-simulate.jpg?v=1" alt="Robot simulating a task in the reconstructed workshop" style="width:100%;height:100%;object-fit:cover" /></div>
+              <div class="cap-panel"><video autoplay muted loop playsinline preload="metadata"><source src="assets/cap-reason.mp4" type="video/mp4" /></video></div>
+              <div class="cap-panel"><video autoplay muted loop playsinline preload="metadata"><source src="assets/cap-synthetic.mp4?v=2" type="video/mp4" /></video></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="industries" id="industries">
-  <p class="section-label">Branchen</p>
-  <div class="industries-header">
-    <h2 class="section-title">Für drei zentrale<br>Einsatzbereiche.</h2>
-    <p class="industries-desc">Ein fokussierter Pilot kann mit einem Standort, einer wiederkehrenden Inspektion oder einer konkreten operativen Frage starten. Dieselbe Pipeline unterstützt Messung, Überwachung und Bestandsanalyse in physischen Betriebsumgebungen.</p>
-  </div>
-  <div class="industries-grid">
-    <div class="industry-card">
-      <p class="industry-num">01</p>
-      <h3 class="industry-name">Bau</h3>
-      <p class="industry-tag">Generalunternehmer · Erdarbeiten · Hochbau</p>
-      <ul class="industry-list">
-        <li>Automatischer Baubericht aus Baustellenaufnahmen</li>
-        <li>Tägliche Fortschrittsanalyse aus Drohnenflügen</li>
-        <li>Abgleich zwischen BIM und gebautem Zustand</li>
-      </ul>
-    </div>
-    <div class="industry-card">
-      <p class="industry-num">02</p>
-      <h3 class="industry-name">Infrastruktur</h3>
-      <p class="industry-tag">Straßenbau · Schiene · Tiefbau</p>
-      <ul class="industry-list">
-        <li>Inspektion von Straßen, Gleisen und Anlagen</li>
-        <li>Veränderungsanalyse über Inspektionszyklen</li>
-      </ul>
-    </div>
-    <div class="industry-card">
-      <p class="industry-num">03</p>
-      <h3 class="industry-name">Logistik</h3>
-      <p class="industry-tag">Containerflächen · Kleine &amp; mittlere Terminals</p>
-      <ul class="industry-list">
-        <li>3D-Bestandsaufnahme von Containern und Flächen</li>
-        <li>Analyse von Slot-Auslastung und Yard-Zustand</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- WORLDS -->
+    <section id="api" class="slide slide--left">
+      <div class="slide__body slide__body--wide">
+        <div class="kicker">Examples · what you can reconstruct</div>
 
-<section id="platform">
-  <p class="section-label">Ablauf</p>
-  <div class="platform-header">
-    <h2 class="section-title">Von Rohdaten<br>zu geprüften Ergebnissen.</h2>
-    <p class="platform-desc">Primis verarbeitet Sensordaten, rekonstruiert die reale Umgebung, erkennt relevante Veränderungen und liefert Kennzahlen, die Ihr Team am Ursprungsscan nachvollziehen kann.</p>
-  </div>
-  <div class="pipeline">
-    <div class="pipeline-step"><p class="pipeline-step-num">01</p><p class="pipeline-step-name">Erfassen</p><p class="pipeline-step-desc">LiDAR · Kamera · Drohne · Satellit · Bestehende Daten</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">02</p><p class="pipeline-step-name">Rekonstruieren</p><p class="pipeline-step-desc">3D-Szene · Punktwolke · Standortmodell</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">03</p><p class="pipeline-step-name">Analysieren</p><p class="pipeline-step-desc">Objekte · Veränderungen · Abweichungen</p></div>
-    <div class="pipeline-step"><p class="pipeline-step-num">04</p><p class="pipeline-step-name">Entscheiden</p><p class="pipeline-step-desc">Geprüft · Erklärbar · Dokumentierbar</p></div>
-  </div>
-  <div class="capabilities-grid">
-    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="0.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="0.5" width="5" height="5" stroke="#999"/><rect x="0.5" y="8.5" width="5" height="5" stroke="#999"/><rect x="8.5" y="8.5" width="5" height="5" stroke="#999"/></svg></div><p class="capability-title">Flexible Sensordaten</p><p class="capability-desc">Start mit Daten, die bereits vorhanden sind: Drohnenbilder, LiDAR, RGB-Kameras, Satellitenbilder oder bestehende Punktwolken.</p></div>
-    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 11V8M5 11V5M9 11V3M13 11V7" stroke="#999" stroke-linecap="round"/></svg></div><p class="capability-title">Messbare Erkenntnisse</p><p class="capability-desc">Volumen, Zählungen, Deltas, BIM-Abweichungen und Veränderungsberichte aus jedem Scanzyklus.</p></div>
-    <div class="capability-card"><div class="capability-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="capability-title">Nachvollziehbare Ergebnisse</p><p class="capability-desc">Jedes Ergebnis mit 3D-Nachweis, Konfidenz und Rückverfolgbarkeit. Keine Blackbox.</p></div>
-  </div>
-</section>
+        <div class="worlds">
+          <a class="world" href="#careers">
+            <div class="world__visual world__visual--img" style="background-image:url(assets/robotics-g1b.jpg)"></div>
+            <div class="world__meta">
+              <span class="world__name">Robotics &amp; warehouse simulation</span>
+            </div>
+          </a>
+          <a class="world" href="#careers">
+            <div class="world__visual world__visual--img" style="background-image:url(assets/architecture.jpg?v=3)"></div>
+            <div class="world__meta">
+              <span class="world__name">Architecture &amp; interiors</span>
+            </div>
+          </a>
+          <a class="world" href="#careers">
+            <div class="world__visual world__visual--img" style="background-image:url(assets/games-desert.jpg?v=2)"></div>
+            <div class="world__meta">
+              <span class="world__name">Games &amp; virtual worlds</span>
+            </div>
+          </a>
+        </div>
+      </div>
 
-<section class="pilot" id="pilot">
-  <p class="section-label">Pilotprogramm</p>
-  <div class="pilot-header">
-    <h2 class="section-title">Feldtest<br>mit echten Daten.</h2>
-    <p class="pilot-desc">Primis wird anhand realer Betriebsscans entwickelt, nicht mit Demo-Datensätzen. Der Pilot richtet sich an Teams, die bereits Standortdaten erfassen und prüfen möchten, ob 3D-Raumintelligenz manuelle Mess-, Inspektions- oder Berichtarbeit reduzieren kann.</p>
-  </div>
-  <div class="pilot-grid">
-    <div class="pilot-card">
-      <p class="pilot-num">01</p>
-      <h3 class="pilot-name">Klarer Umfang</h3>
-      <p class="pilot-text">Ein Standort, eine Asset-Gruppe oder ein wiederkehrender Workflow mit einer klaren Fragestellung.</p>
-    </div>
-    <div class="pilot-card">
-      <p class="pilot-num">02</p>
-      <h3 class="pilot-name">Praktisches Ergebnis</h3>
-      <p class="pilot-text">Eine 3D-Rekonstruktion, gemessene Kennzahlen und eine kurze technische Auswertung.</p>
-    </div>
-    <div class="pilot-card">
-      <p class="pilot-num">03</p>
-      <h3 class="pilot-name">Technische Prüfung</h3>
-      <p class="pilot-text">Die Ergebnisse werden gegen die Ausgangsdaten geprüft, damit Grenzen und Sicherheit sichtbar bleiben.</p>
-    </div>
-    <div class="pilot-card">
-      <p class="pilot-num">04</p>
-      <h3 class="pilot-name">Klare Einordnung</h3>
-      <p class="pilot-text">Am Ende ist klar, ob der Workflow nützlich genug für den nächsten Schritt ist.</p>
-    </div>
-  </div>
-  <div class="pilot-fit">
-    <div class="pilot-fit-item">
-      <p class="pilot-fit-label">Geeignet für</p>
-      <p class="pilot-fit-text">Bau-, Infrastruktur- oder Logistikteams mit wiederholbaren visuellen oder räumlichen Daten.</p>
-    </div>
-    <div class="pilot-fit-item">
-      <p class="pilot-fit-label">Benötigt</p>
-      <p class="pilot-fit-text">Beispielscans, der aktuelle manuelle Prozess und ein messbares Vergleichsziel.</p>
-    </div>
-    <div class="pilot-fit-item">
-      <p class="pilot-fit-label">Resultat</p>
-      <p class="pilot-fit-text">Eine kompakte Bewertung von Genauigkeit, Nutzen und Anforderungen für einen produktiven Einsatz.</p>
-    </div>
-  </div>
-</section>
+      <div class="slide__corner slide__corner--tl"><span>04 / 06</span></div>
+      <div class="slide__corner slide__corner--br"><span>Worlds</span></div>
+    </section>
 
-<section class="contact" id="contact">
-  <h2 class="contact-headline">Pilot anfragen.</h2>
-  <p class="contact-form-eyebrow">Kontaktieren Sie uns</p>
-  <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="834174a2-8755-42e8-a286-e61869fb4dda">
-    <input type="hidden" name="subject" value="Neue Pilot-Anfrage über primisintelligence.com">
-    <input type="hidden" name="from_name" value="Primis Website">
-    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-    <div class="form-field">
-      <label for="form-name" class="form-label">Name</label>
-      <input id="form-name" name="name" type="text" class="form-input" required>
-    </div>
-    <div class="form-field">
-      <label for="form-email" class="form-label">E-Mail</label>
-      <input id="form-email" name="email" type="email" class="form-input" required>
-    </div>
-    <div class="form-field">
-      <label for="form-company" class="form-label">Unternehmen <span style="text-transform:none;color:var(--gray-200);">(optional)</span></label>
-      <input id="form-company" name="company" type="text" class="form-input">
-    </div>
-    <div class="form-field">
-      <label for="form-message" class="form-label">Nachricht</label>
-      <textarea id="form-message" name="message" class="form-textarea" rows="4" required></textarea>
-    </div>
-    <button type="submit" class="btn-primary form-submit">
-      Nachricht senden
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-  </form>
-  <p class="contact-alt">Oder direkt per E-Mail: <a href="mailto:info@primisintelligence.com?subject=Pilot%20Anfrage">info@primisintelligence.com</a></p>
-</section>
+    <!-- TEAM -->
+    <section id="team" class="slide slide--left">
+      <div class="slide__body">
+        <div class="kicker">Founder</div>
+        <h2 class="display display--md">
+          <span class="display__line">Built by makers,</span>
+          <span class="display__line display__line--muted"><em>for makers.</em></span>
+        </h2>
+        <p class="lede lede--sm">
+          Primis is built by Vladislav Praznik, a robotics builder and researcher from
+          Germany. For now it is a team of one, made hands-on for the people who have to
+          use it.
+        </p>
+        <div class="founder-portrait" id="founderPortrait">VP</div>
+        <button class="founder-toggle" id="founderToggle" type="button" aria-expanded="false" aria-controls="founderDetails">
+          <span class="founder-toggle__icon">+</span>
+          <span class="founder-toggle__label">More about the founder</span>
+        </button>
+        <div class="founder-details" id="founderDetails">
+          <p class="lede lede--sm" style="margin-top:22px">
+            Through Futury and KI Macht Hessen (a statewide AI tour), and on the floor at
+            Hannover Messe and iENA, he has spent real time close to industry, robotics,
+            and the current wave of AI.
+            The conviction behind Primis is simple: everyone is racing to build on top, but
+            the foundational layer for spatial intelligence, the part that lets machines
+            understand and act in the physical world, is still missing. That layer is what
+            Primis is built to solve.
+          </p>
+          <ul class="founder-highlights">
+            <li><strong>Team Hector</strong>, TU Darmstadt: search-and-rescue robotics, competing in RoboCup Rescue</li>
+            <li><strong>Research assistant in Multimodal AI</strong>, with two independent research projects published</li>
+            <li><strong>2nd Prize in Technology</strong> at the national Jugend forscht competition for <strong>T.A.R.S</strong>, an AI-driven motion-mirroring teleoperation robot</li>
+            <li>Exhibited at <strong>Hannover Messe</strong>, representing Germany's Federal Ministry of Research, Technology and Space</li>
+            <li>Exhibited at <strong>iENA</strong>, the international trade fair for inventions, winning a <strong>gold medal</strong></li>
+            <li><strong>Thomas Weiland Scholar</strong>, a scholarship for Jugend forscht national finalists</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<script>
-(function() {
-  var form = document.getElementById('contact-form');
-  var status = document.getElementById('form-status');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    status.className = 'form-status';
-    status.textContent = 'Wird gesendet …';
-    var data = new FormData(form);
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(function(res) {
-      return res.json().then(function(d) {
-        if (res.ok && d && d.success) {
-          form.reset();
-          status.className = 'form-status success';
-          status.textContent = 'Danke. Ihre Nachricht ist angekommen.';
-        } else {
-          status.className = 'form-status error';
-          status.textContent = (d && d.message) || 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+    <!-- CTA -->
+    <section id="careers" class="slide slide--left slide--cta">
+      <div class="slide__body">
+        <div class="kicker">Preview access · June 2026</div>
+        <h2 class="display display--md">
+          <span class="display__line">Ready to rebuild</span>
+          <span class="display__line display__line--muted"><em>your world?</em></span>
+        </h2>
+
+        <p class="lede lede--sm">
+          We're onboarding pilot partners now. Tell us the space you'd reconstruct and we'll be in touch.
+        </p>
+
+        <div class="cta-row">
+          <a class="pill pill--lg" href="mailto:info@primisintelligence.com?subject=Primis%20pilot%20%26%20access">Get in touch</a>
+          <a class="link link--lg" href="mailto:info@primisintelligence.com">
+            Talk to the team
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="slide__corner slide__corner--tl"><span>06 / 06</span></div>
+      <div class="slide__corner slide__corner--br"><span>Create</span></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__row footer__row--top">
+        <a class="nav__brand" href="#top" aria-label="Primis home">
+          <svg class="nav__mark" viewBox="0 0 60 84" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6,56 30,4 54,56"/><polyline points="6,56 30,80 54,56"/><line x1="30" y1="4" x2="30" y2="80"/></svg>
+          <span class="nav__word">Primis</span>
+        </a>
+        <div class="footer__cols">
+          <div>
+            <div class="footer__head">Product</div>
+            <a href="#demo">Demo</a>
+            <a href="#capabilities">What it does</a>
+            <a href="#api">Worlds</a>
+          </div>
+          <div>
+            <div class="footer__head">Company</div>
+            <a href="#team">Team</a>
+            <a href="#careers">Contact</a>
+            <a href="mailto:info@primisintelligence.com">Email us</a>
+          </div>
+          <div>
+            <div class="footer__head">Legal</div>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__row footer__row--bot">
+        <span>© 2026 Primis Labs, Inc.</span>
+        <span>Made for creators who ship.</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script type="module" src="js/landing.js"></script>
+
+
+  <script>
+    (function(){
+      var items=[].slice.call(document.querySelectorAll('#capList .cap-item'));
+      var panels=[].slice.call(document.querySelectorAll('#capMedia .cap-panel'));
+      var timer=null;
+      function activate(i){
+        if(timer){clearTimeout(timer);timer=null;}
+        items.forEach(function(x){x.classList.remove('active')});
+        panels.forEach(function(p){
+          p.classList.remove('active');
+          var v=p.querySelector('video'); if(v){ try{v.pause();}catch(e){} }
+        });
+        if(items[i]) items[i].classList.add('active');
+        var panel=panels[i]; if(!panel) return;
+        panel.classList.add('active');
+        var v=panel.querySelector('video');
+        if(v){
+          try{ v.pause(); v.currentTime=0; }catch(e){}
+          // hold the first frame for a beat, then play from the start
+          timer=setTimeout(function(){
+            if(panel.classList.contains('active')){ var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); }
+          }, 450);
         }
-      });
-    }).catch(function() {
-      status.className = 'form-status error';
-      status.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
-    });
-  });
-})();
-</script>
-
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="#" class="footer-logo">Primis</a>
-      <p class="footer-tagline">3D-Raumintelligenz für industrielle Standorte — entwickelt in Deutschland.</p>
-    </div>
-    <div class="footer-col">
-      <p class="footer-heading">Produkt</p>
-      <ul>
-        <li><a href="#industries">Branchen</a></li>
-        <li><a href="#platform">Ablauf</a></li>
-        <li><a href="#pilot">Pilotprogramm</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <p class="footer-heading">Unternehmen</p>
-      <ul>
-        <li><a href="#contact">Kontakt</a></li>
-        <li><a href="mailto:info@primisintelligence.com">E-Mail</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <p class="footer-heading">Rechtliches</p>
-      <ul>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-info">Primis UG (haftungsbeschränkt) · Rödermark, Hessen · Deutschland</span>
-    <span class="footer-copyright">© 2026 Primis UG. Alle Rechte vorbehalten.</span>
-  </div>
-</footer>
-
+      }
+      // founder portrait: auto-use assets/founder.jpg if it exists, else keep the monogram
+      (function(){var el=document.getElementById('founderPortrait');if(!el)return;var im=new Image();im.onload=function(){el.style.backgroundImage="url('assets/founder.jpg')";el.textContent="";};im.src="assets/founder.jpg";})();
+      // founder details: + toggle reveals the full bio + credentials
+      (function(){var t=document.getElementById('founderToggle'),d=document.getElementById('founderDetails');if(!t||!d)return;
+        t.addEventListener('click',function(){var open=d.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');var l=t.querySelector('.founder-toggle__label');if(l)l.textContent=open?'Less':'More about the founder';});})();
+      items.forEach(function(it,i){it.addEventListener('click',function(){activate(i);});});
+      // initialise: reset every clip to frame 0, then start the default-active one
+      panels.forEach(function(p){ var v=p.querySelector('video'); if(v){ try{v.pause();v.currentTime=0;}catch(e){} } });
+      var start=panels.findIndex(function(p){return p.classList.contains('active');});
+      activate(start<0?0:start);
+    })();
+  </script>
 </body>
 </html>
